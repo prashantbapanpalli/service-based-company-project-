@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-1791d9da-04aa-4de6-b9a5-2d06f0dcc30f/styles.css">
+<script src="_ds/modernist-1791d9da-04aa-4de6-b9a5-2d06f0dcc30f/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); -webkit-font-smoothing: antialiased; }
+  a { color: var(--color-text); text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  @keyframes gosm-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes gosm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes gosm-enter { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes gosm-veil { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+  @keyframes gosm-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+  @keyframes gosm-rule { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes gosm-curtain { from { transform: translateY(0); } to { transform: translateY(-101%); } }
+  @keyframes gosm-fadeup { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes gosm-word { from { opacity: 0; transform: translateY(0.42em) rotate(1.2deg); } to { opacity: 1; transform: translateY(0) rotate(0deg); } }
+  @keyframes gosm-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes gosm-lift { from { transform: translateY(105%); } to { transform: translateY(0); } }
+  @keyframes gosm-drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) {
+    [data-enter], [data-veil], [data-word] { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+  [data-gosm-intro="skip"] [data-enter] { animation: gosm-enter .6s cubic-bezier(.2,.75,.2,1) both !important; }
+  [data-gosm-intro="skip"] [data-veil] { display: none !important; }
+  [data-gosm-intro="skip"] img[style*="gosm-zoom"] { animation: gosm-zoom 1.8s cubic-bezier(.2,.75,.2,1) both !important; }
+  .btn { white-space: nowrap; }
+  ::placeholder { color: color-mix(in srgb, var(--color-text) 38%, transparent); }
+  select, input, textarea { font-family: var(--font-body); }
+</style>
+</helmet>
+<div style="font-family: var(--font-body); font-size: 16px; line-height: 1.55; overflow-x: hidden; background: var(--color-bg);">
+
+  <sc-if value="{{ introRunning }}">
+    <div style="position: fixed; inset: 0; z-index: 200; background-color: #201e1d; background: var(--color-text); color: #f3f2f2; overflow: hidden; isolation: isolate;">
+      <div style="position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr);" aria-hidden="true">
+        <span style="border-right: 1px solid rgba(243,242,242,0.07);"></span>
+        <span style="border-right: 1px solid rgba(243,242,242,0.07);"></span>
+        <span style="border-right: 1px solid rgba(243,242,242,0.07);"></span>
+        <span style="border-right: 1px solid rgba(243,242,242,0.07);"></span>
+        <span></span>
+      </div>
+      <div style="position: relative; box-sizing: border-box; height: 100%; display: grid; grid-template-rows: auto 1fr auto; gap: clamp(16px, 3vh, 40px); padding: clamp(18px, 4vw, 56px);">
+        <div style="display: flex; align-items: center; gap: 12px; animation: gosm-fadeup .6s cubic-bezier(.2,.75,.2,1) both;">
+          <svg viewBox="0 0 64 64" style="display: block; width: 34px; height: 34px; flex: none;" aria-hidden="true">
+            <path d="M46.8 17.2 A21 21 0 1 0 51.7 39.2 L34 39.2" fill="none" stroke="#f47c20" stroke-width="8"></path>
+            <path d="M19 32.5 L28.5 42.5 L46 19.5" fill="none" stroke="#3fbf46" stroke-width="8"></path>
+          </svg>
+          <span style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.55;">GOSM Solutions · India · UAE · Australia</span>
+        </div>
+        <div style="align-self: center; display: grid; gap: clamp(6px, 1vh, 16px); min-height: 0;">
+          <div style="overflow: hidden;">
+            <span data-introline="1" style="display: block; font-family: var(--font-heading); font-weight: 800; font-size: min(clamp(30px, 10.5vw, 150px), 15vh); line-height: 0.9; letter-spacing: -0.055em; animation: gosm-lift 1s cubic-bezier(.2,.8,.2,1) .1s both;">Every</span>
+          </div>
+          <div style="overflow: hidden;">
+            <span data-introline="1" style="display: block; font-family: var(--font-heading); font-weight: 800; font-size: min(clamp(30px, 10.5vw, 150px), 15vh); line-height: 0.9; letter-spacing: -0.055em; color: var(--color-accent); animation: gosm-lift 1s cubic-bezier(.2,.8,.2,1) .26s both;">service.</span>
+          </div>
+          <div style="overflow: hidden;">
+            <span data-introline="1" style="display: block; font-family: var(--font-heading); font-weight: 800; font-size: min(clamp(30px, 10.5vw, 150px), 15vh); line-height: 0.9; letter-spacing: -0.055em; animation: gosm-lift 1s cubic-bezier(.2,.8,.2,1) .42s both;">One number.</span>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 16px;">
+            <span data-intro-label="1" style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(13px, 1.4vw, 17px); letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.75;">Verified providers</span>
+            <span data-intro-pct="1" style="font-family: var(--font-heading); font-weight: 800; font-size: min(clamp(34px, 11vw, 132px), 13vh); line-height: 0.85; letter-spacing: -0.06em; font-variant-numeric: tabular-nums;">00%</span>
+          </div>
+          <div style="height: 2px; background: rgba(243,242,242,0.22);">
+            <div data-intro-bar="1" style="height: 2px; background: var(--color-accent); transform-origin: left; transform: scaleX(0); will-change: transform;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ introLifting }}">
+    <div style="position: fixed; inset: 0; z-index: 200; display: grid; grid-template-columns: repeat(5, 1fr); pointer-events: none;">
+      <span style="background-color: #201e1d; animation: gosm-curtain .95s cubic-bezier(.76,0,.24,1) 0s both;"></span>
+      <span style="background-color: #201e1d; animation: gosm-curtain .95s cubic-bezier(.76,0,.24,1) .07s both;"></span>
+      <span style="background-color: #201e1d; animation: gosm-curtain .95s cubic-bezier(.76,0,.24,1) .14s both;"></span>
+      <span style="background-color: #201e1d; animation: gosm-curtain .95s cubic-bezier(.76,0,.24,1) .21s both;"></span>
+      <span style="background-color: #201e1d; animation: gosm-curtain .95s cubic-bezier(.76,0,.24,1) .28s both;"></span>
+    </div>
+  </sc-if>
+  <sc-if value="{{ showTopBar }}" hint-placeholder-val="{{ true }}">
+  <div style="background: var(--color-text); color: var(--color-bg); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">
+    <div style="max-width: 1480px; margin: 0 auto; padding: 9px clamp(18px, 4vw, 64px); display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: center;">
+      <a href="tel:7019183716" style="color: var(--color-bg);">7019183716</a>
+      <a href="tel:9810767893" style="color: var(--color-bg);">9810767893</a>
+      <a href="mailto:info@gosm.com" style="color: var(--color-bg);">info@gosm.com</a>
+      <span style="opacity: 0.5;">India · UAE · Australia</span>
+      <a href="https://wa.me/7019183716" style="color: var(--color-accent-400); margin-left: auto;">WhatsApp</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <header style="position: sticky; top: 0; z-index: 60; background: var(--color-bg); border-bottom: 2px solid var(--color-divider);">
+    <div data-scrollbar="1" style="position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px; background: var(--color-accent); transform-origin: left; transform: scaleX(0); will-change: transform; pointer-events: none;"></div>
+    <div style="max-width: 1480px; margin: 0 auto; padding: 13px clamp(18px, 4vw, 64px); display: flex; align-items: center; gap: 18px;">
+      <a href="#home" onClick="{{ nav.home }}" style="display: flex; align-items: center; gap: 10px; margin-right: auto;" aria-label="GOSM home">
+        <svg width="40" height="40" viewBox="0 0 64 64" style="display: block; flex: none;" aria-hidden="true">
+          <path d="M46.8 17.2 A21 21 0 1 0 51.7 39.2 L34 39.2" fill="none" stroke="#f47c20" stroke-width="8"></path>
+          <path d="M19 32.5 L28.5 42.5 L46 19.5" fill="none" stroke="#2e9b34" stroke-width="8"></path>
+        </svg>
+        <span style="display: grid; gap: 1px;">
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 2.6vw, 25px); line-height: 1; letter-spacing: -0.04em;">GOSM</span>
+          <span style="font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6;">Solutions</span>
+        </span>
+      </a>
+      <nav style="display: none; gap: clamp(16px, 2.4vw, 34px); align-items: center;" data-desktop-nav="1">
+        <a href="#home" onClick="{{ nav.home }}" style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Home</a>
+        <a href="#about" onClick="{{ nav.about }}" style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">About</a>
+        <a href="#services" onClick="{{ nav.services }}" style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Services</a>
+        <a href="#membership" onClick="{{ nav.membership }}" style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Membership</a>
+        <a href="#partner" onClick="{{ nav.partner }}" style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Partner with us</a>
+        <a href="#contact" onClick="{{ nav.contact }}" style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Contact</a>
+      </nav>
+      <a href="tel:7019183716" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; flex: none;">Call now</a>
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 38px; padding: 0 8px; background: transparent; border: 1px solid var(--color-divider); cursor: pointer;" data-mobile-toggle="1">
+        <span style="display: block; height: 2px; background: var(--color-text);"></span>
+        <span style="display: block; height: 2px; background: var(--color-text);"></span>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}">
+      <nav style="border-top: 2px solid var(--color-divider); padding: 8px clamp(18px, 4vw, 64px) 20px; display: grid; gap: 2px;">
+        <a href="#home" onClick="{{ nav.home }}" style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-300);">Home</a>
+        <a href="#about" onClick="{{ nav.about }}" style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-300);">About</a>
+        <a href="#services" onClick="{{ nav.services }}" style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-300);">Services</a>
+        <a href="#membership" onClick="{{ nav.membership }}" style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-300);">Membership</a>
+        <a href="#partner" onClick="{{ nav.partner }}" style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-300);">Partner with us</a>
+        <a href="#contact" onClick="{{ nav.contact }}" style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; padding: 8px 0;">Contact</a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section style="border-bottom: 2px solid var(--color-divider); position: relative;">
+      <div style="position: relative; min-height: clamp(460px, 66vh, 720px); display: flex; align-items: flex-end; overflow: hidden;">
+        <img data-parallax="0.12" src="https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="A service professional at work in a home" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(32,30,29,0.35) 0%, rgba(32,30,29,0.82) 100%);"></div>
+        <div data-veil="1" style="position: absolute; inset: 0; background: var(--color-accent); transform-origin: top; animation: gosm-veil 1.1s cubic-bezier(.7,0,.2,1) 2.3s both; z-index: 2;"></div>
+        <div style="position: relative; z-index: 1; width: 100%; max-width: 1480px; margin: 0 auto; padding: clamp(44px, 8vw, 96px) clamp(18px, 4vw, 64px);">
+          <p data-enter="1" style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-400); margin: 0 0 clamp(14px, 2vw, 26px); animation: gosm-enter .95s cubic-bezier(.2,.75,.2,1) 2.5s both;">Home &amp; business services · India · UAE · Australia</p>
+          <h1 data-enter="1" style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(40px, 8.4vw, 116px); line-height: 0.94; letter-spacing: -0.045em; color: #f3f2f2; margin: 0 0 clamp(16px, 2vw, 28px); max-width: 15ch; text-wrap: pretty; animation: gosm-enter 1.05s cubic-bezier(.2,.75,.2,1) 2.65s both;">Every service your home needs. One number.</h1>
+          <p data-enter="1" style="font-size: clamp(16px, 1.5vw, 21px); max-width: 46ch; color: rgba(243,242,242,0.92); margin: 0 0 clamp(22px, 3vw, 36px); animation: gosm-enter .95s cubic-bezier(.2,.75,.2,1) 2.95s both;">Verified professionals for repairs, care, logistics and business support — booked in minutes, confirmed by a real person.</p>
+          <div data-enter="1" style="display: flex; flex-wrap: wrap; gap: 12px; animation: gosm-enter .95s cubic-bezier(.2,.75,.2,1) 3.15s both;">
+            <a href="#enquiry" class="btn btn-primary" style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.09em; padding: 14px 22px;">Book a service</a>
+            <a href="#membership" onClick="{{ nav.membership }}" class="btn" style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.09em; padding: 14px 22px; border: 1px solid rgba(243,242,242,0.55); color: #f3f2f2;">Membership plans</a>
+          </div>
+          <div data-enter="1" style="display: flex; align-items: center; gap: 12px; margin-top: clamp(26px, 4vw, 48px); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(243,242,242,0.7); animation: gosm-enter .95s cubic-bezier(.2,.75,.2,1) 3.35s both;">
+            <span style="display: block; width: 44px; height: 1px; background: var(--color-accent);"></span>
+            <span>Scroll</span>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
+      <div style="overflow: hidden; background: var(--color-text); color: var(--color-bg); border-top: 2px solid var(--color-text);">
+        <div style="display: flex; width: max-content; animation: gosm-marquee 38s linear infinite;">
+          <div style="display: flex; gap: 44px; padding: 11px 0 11px 44px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap;">
+            <span>100+ services</span><span style="color: var(--color-accent-400);">/</span><span>Background-verified providers</span><span style="color: var(--color-accent-400);">/</span><span>Upfront pricing</span><span style="color: var(--color-accent-400);">/</span><span>24/7 support</span><span style="color: var(--color-accent-400);">/</span><span>3 countries</span><span style="color: var(--color-accent-400);">/</span>
+          </div>
+          <div style="display: flex; gap: 44px; padding: 11px 0 11px 44px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap;" aria-hidden="true">
+            <span>100+ services</span><span style="color: var(--color-accent-400);">/</span><span>Background-verified providers</span><span style="color: var(--color-accent-400);">/</span><span>Upfront pricing</span><span style="color: var(--color-accent-400);">/</span><span>24/7 support</span><span style="color: var(--color-accent-400);">/</span><span>3 countries</span><span style="color: var(--color-accent-400);">/</span>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </section>
+
+    <section id="enquiry" style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px); display: grid; gap: clamp(32px, 5vw, 72px); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div data-reveal="1">
+          <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 18px;">Book a provider</p>
+          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 4.4vw, 58px); line-height: 1.0; letter-spacing: -0.035em; margin: 0 0 18px; max-width: 20ch;">Tell us the job. We'll call to confirm.</h2>
+          <p class="text-muted" style="max-width: 42ch; margin: 0 0 26px;">Help around your home or business is a few clicks away. No account, no prepayment — you pay the professional directly at the time of service.</p>
+          <div style="border-top: 2px solid var(--color-divider);">
+            <div style="display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--color-neutral-300);"><span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent);">01</span><span>Fill the form — we match you to a verified professional.</span></div>
+            <div style="display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--color-neutral-300);"><span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent);">02</span><span>Our team calls to confirm the appointment and details.</span></div>
+            <div style="display: flex; gap: 14px; padding: 14px 0;"><span style="font-family: var(--font-heading); font-weight: 800; color: var(--color-accent);">03</span><span>The professional visits and completes the job.</span></div>
+          </div>
+        </div>
+        <div style="background: var(--color-surface); border: 2px solid var(--color-text); padding: clamp(20px, 3vw, 36px);" data-reveal="1">
+          <sc-if value="{{ enquirySent }}">
+            <div style="padding: 32px 0;">
+              <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 12px;">Request received</p>
+              <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.03em; margin: 0 0 12px;">Thanks — we'll call you shortly.</h3>
+              <p class="text-muted" style="margin: 0 0 22px;">A GOSM coordinator will confirm your appointment on the number you provided.</p>
+              <button type="button" onClick="{{ resetEnquiry }}" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.08em;">Send another request</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ enquiryOpen }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitEnquiry }}" style="display: grid; gap: 14px;">
+            <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+              <div class="field"><label for="e-name">Full Name *</label><input class="input" id="e-name" value="{{ ev.name }}" onChange="{{ eh.name }}" placeholder="Your name"></div>
+              <div class="field"><label for="e-phone">Phone Number *</label><input class="input" id="e-phone" value="{{ ev.phone }}" onChange="{{ eh.phone }}" placeholder="10-digit number"></div>
+            </div>
+            <div class="field"><label for="e-service">Service *</label>
+              <select class="input" id="e-service" value="{{ ev.service }}" onChange="{{ eh.service }}">
+                <option value="">--Select Service--</option>
+                <sc-for list="{{ serviceNames }}" as="s" hint-placeholder-count="4"><option value="{{ s }}">{{ s }}</option></sc-for>
+              </select>
+            </div>
+            <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+              <div class="field"><label for="e-persons">No. of Persons *</label><input class="input" id="e-persons" type="number" min="1" value="{{ ev.persons }}" onChange="{{ eh.persons }}" placeholder="1"></div>
+              <div class="field"><label for="e-country">Country *</label>
+                <select class="input" id="e-country" value="{{ ev.country }}" onChange="{{ eh.country }}">
+                  <option value="">--Country--</option><option value="India">India</option><option value="UAE">UAE</option><option value="Australia">Australia</option>
+                </select>
+              </div>
+              <div class="field"><label for="e-city">City *</label>
+                <select class="input" id="e-city" value="{{ ev.city }}" onChange="{{ eh.city }}">
+                  <option value="">--City--</option>
+                  <sc-for list="{{ cityOptions }}" as="c" hint-placeholder-count="3"><option value="{{ c }}">{{ c }}</option></sc-for>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="e-address">Address *</label><input class="input" id="e-address" value="{{ ev.address }}" onChange="{{ eh.address }}" placeholder="Street, area, landmark"></div>
+            <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+              <div class="field"><label for="e-date">Date *</label><input class="input" id="e-date" type="date" value="{{ ev.date }}" onChange="{{ eh.date }}"></div>
+              <div class="field"><label for="e-time">Time *</label><input class="input" id="e-time" type="time" value="{{ ev.time }}" onChange="{{ eh.time }}"></div>
+            </div>
+            <sc-if value="{{ enquiryError }}">
+              <p style="margin: 0; font-size: 13px; font-weight: 600; color: var(--color-accent-700);">{{ enquiryError }}</p>
+            </sc-if>
+            <button type="submit" class="btn btn-primary" style="justify-content: flex-start; padding: 15px 22px; text-transform: uppercase; letter-spacing: 0.1em;">Submit query</button>
+          </form>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);">
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; margin-bottom: clamp(28px, 4vw, 52px);" data-reveal="1">
+          <div>
+            <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 16px;">Popular services</p>
+            <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 5vw, 64px); line-height: 1.0; letter-spacing: -0.04em; margin: 0; max-width: 22ch;">Trusted professionals for every need</h2>
+          </div>
+          <p class="text-muted" style="max-width: 34ch; margin: 0;">From everyday repairs to complete home services, GOSM connects you with people who get the job done right.</p>
+        </div>
+        <div style="display: grid; gap: 2px; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 2px solid var(--color-text); background: var(--color-text);" data-popular-grid="1">
+          <sc-for list="{{ popular }}" as="p" hint-placeholder-count="4">
+            <a href="#services" onClick="{{ nav.services }}" style="background: var(--color-bg); display: block;" style-hover="background: var(--color-accent); color: var(--color-bg);">
+              <div style="width: 100%; aspect-ratio: 4 / 5; background-color: var(--color-neutral-300); background-size: cover; background-position: center; background-image: {{ p.bg }};" role="img" aria-label="{{ p.alt }}"></div>
+              <div style="padding: 16px 18px 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span><span style="display: block; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6;">Professional</span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 24px; letter-spacing: -0.03em;">{{ p.title }}</span></span>
+                <span style="font-family: var(--font-heading); font-weight: 800;">→</span>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider); overflow: hidden;">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(52px, 8vw, 120px) clamp(18px, 4vw, 64px);">
+        <div data-words="1" style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(40px, 9vw, 128px); line-height: 0.92; letter-spacing: -0.05em; display: flex; flex-wrap: wrap; gap: 0 0.26em;">
+          <span data-word="1">One</span><span data-word="1">call</span><span data-word="1">for</span>
+          <span data-word="1" style="color: var(--color-accent-700);">everything</span>
+          <span data-word="1">your</span><span data-word="1">home</span><span data-word="1">needs.</span>
+        </div>
+        <div data-reveal="1" style="height: 2px; background: var(--color-accent); transform-origin: left; animation: gosm-bar 1.1s cubic-bezier(.76,0,.24,1) both; margin-top: clamp(24px, 3vw, 40px);"></div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider); background: var(--color-surface);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);">
+        <div style="display: grid; gap: clamp(28px, 5vw, 72px); grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); align-items: start;" data-reveal="1">
+          <div>
+            <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 16px;">Why GOSM</p>
+            <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 5vw, 64px); line-height: 1.0; letter-spacing: -0.04em; margin: 0 0 16px;">Everyday life, made easier</h2>
+            <p class="text-muted" style="max-width: 40ch; margin: 0;">One platform for everything a household or business needs, wherever GOSM operates.</p>
+          </div>
+          <div style="border-top: 2px solid var(--color-divider);">
+            <sc-for list="{{ whyPoints }}" as="w" hint-placeholder-count="4">
+              <div style="display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--color-neutral-400); font-size: clamp(16px, 1.4vw, 19px);"><span style="color: var(--color-accent); font-weight: 800;">✓</span><span>{{ w }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="margin-top: clamp(34px, 5vw, 64px); display: grid; gap: 2px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); background: var(--color-divider); border: 2px solid var(--color-text);" data-reveal="1">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+            <div style="background: var(--color-surface); padding: clamp(20px, 3vw, 34px) clamp(16px, 2vw, 26px);">
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(36px, 5vw, 62px); letter-spacing: -0.05em; line-height: 1;">{{ s.n }}</div>
+              <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 8px; opacity: 0.65;">{{ s.k }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; justify-content: space-between; margin-bottom: clamp(28px, 4vw, 48px);" data-reveal="1">
+          <div>
+            <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 16px;">Services</p>
+            <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 5vw, 64px); line-height: 1.0; letter-spacing: -0.04em; margin: 0;">What we offer</h2>
+          </div>
+          <a href="#services" onClick="{{ nav.services }}" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.09em; padding: 13px 20px;">View all services →</a>
+        </div>
+        <div style="border-top: 2px solid var(--color-text);">
+          <sc-for list="{{ topCategories }}" as="c" hint-placeholder-count="6">
+            <div style="border-bottom: 1px solid var(--color-neutral-400); padding: clamp(20px, 2.6vw, 30px) 0; display: grid; gap: 14px clamp(24px, 4vw, 60px); grid-template-columns: minmax(0, 1fr); align-items: start;" data-svc-row="1" style-hover="background: var(--color-neutral-200);">
+              <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 2.1vw, 28px); letter-spacing: -0.03em; margin: 0; display: flex; gap: 14px;"><span style="font-size: 12px; font-weight: 800; color: var(--color-accent); letter-spacing: 0;">{{ c.no }}</span>{{ c.title }}</h3>
+              <p class="text-muted" style="margin: 0; max-width: 66ch;">{{ c.body }}</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="#enquiry" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 0.08em;">Book now</a>
+                <a href="tel:7019183716" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.08em;">Call now</a>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider); background: var(--color-text); color: var(--color-bg);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);">
+        <div data-reveal="1">
+          <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-400); margin: 0 0 16px;">Where GOSM operates</p>
+          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 5vw, 64px); line-height: 1.0; letter-spacing: -0.04em; margin: 0 0 clamp(26px, 4vw, 44px); max-width: 26ch;">Built for India, the UAE and Australia</h2>
+        </div>
+        <div style="display: grid; gap: 2px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); background: rgba(243,242,242,0.28);" data-reveal="1">
+          <sc-for list="{{ regions }}" as="r" hint-placeholder-count="3">
+            <div style="background: var(--color-text); padding: clamp(20px, 3vw, 32px) clamp(16px, 2vw, 28px);">
+              <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-400); margin-bottom: 14px;">{{ r.name }}</div>
+              <sc-for list="{{ r.cities }}" as="city" hint-placeholder-count="3">
+                <div style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 2vw, 27px); letter-spacing: -0.03em; padding: 5px 0;">{{ city }}</div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+
+    <section style="border-bottom: 2px solid var(--color-divider); overflow: hidden; background: var(--color-text);">
+      <div style="padding: clamp(28px, 4vw, 52px) 0;">
+        <div style="display: flex; width: max-content; gap: 14px; animation: gosm-drift 46s linear infinite;">
+          <sc-for list="{{ stripDouble }}" as="im" hint-placeholder-count="6">
+            <div style="width: clamp(180px, 22vw, 300px); aspect-ratio: 3 / 4; background-color: #2c2a29; background-size: cover; background-position: center; background-image: {{ im.bg }}; flex: none;"></div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+    <section style="background: var(--color-accent); color: #f3f2f2; border-bottom: 2px solid var(--color-text);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(52px, 8vw, 120px) clamp(18px, 4vw, 64px);" data-reveal="1">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(34px, 7vw, 92px); line-height: 0.96; letter-spacing: -0.045em; margin: 0 0 20px; max-width: 20ch;">Ready to simplify your life with GOSM?</h2>
+        <p style="font-size: clamp(16px, 1.5vw, 20px); max-width: 52ch; margin: 0 0 30px;">Join thousands of members accessing 100+ daily services, financial assistance and exclusive rewards on one unified platform.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="#membership" onClick="{{ nav.membership }}" class="btn" style="background: var(--color-text); color: #f3f2f2; padding: 15px 24px; text-transform: uppercase; letter-spacing: 0.1em;">Explore membership plans</a>
+          <a href="#contact" onClick="{{ nav.contact }}" class="btn" style="border: 1px solid rgba(243,242,242,0.6); color: #f3f2f2; padding: 15px 24px; text-transform: uppercase; letter-spacing: 0.1em;">Talk to us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}">
+  <main>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(44px, 7vw, 96px) clamp(18px, 4vw, 64px) clamp(34px, 5vw, 64px);">
+        <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 20px;">About GOSM</p>
+        <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 8vw, 108px); line-height: 0.94; letter-spacing: -0.045em; margin: 0 0 22px; max-width: 18ch;">One platform. Every trusted service.</h1>
+        <p style="font-size: clamp(17px, 1.6vw, 22px); max-width: 54ch; margin: 0;" class="text-muted">GOSM Solutions Pvt. Ltd. connects homes, families and businesses across India, the UAE and Australia to verified service providers.</p>
+      </div>
+      <img src="https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="GOSM service professional" style="width: 100%; height: clamp(240px, 42vh, 520px); object-fit: cover; border-top: 2px solid var(--color-text);">
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px); display: grid; gap: clamp(30px, 5vw, 72px); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));" data-reveal="1">
+        <div>
+          <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 16px;">Our story</p>
+          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(28px, 4vw, 52px); line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 20px; max-width: 24ch;">Built for how service actually runs</h2>
+          <p style="max-width: 48ch;">A leaking tap, an elder parent who needs a nurse, a tutor for your child — the need is always specific and always urgent. GOSM exists so you make one call instead of ten.</p>
+          <p class="text-muted" style="max-width: 48ch; margin: 0;">From home and family needs to professional and business support, we connect you with verified providers, saving you time, effort and unnecessary hassle.</p>
+        </div>
+        <div style="border-top: 2px solid var(--color-divider);">
+          <sc-for list="{{ aboutPoints }}" as="a" hint-placeholder-count="4">
+            <div style="display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--color-neutral-400); font-size: clamp(16px, 1.4vw, 19px);"><span style="color: var(--color-accent); font-weight: 800;">✓</span><span>{{ a }}</span></div>
+          </sc-for>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
+            <a href="#services" onClick="{{ nav.services }}" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 0.09em; padding: 14px 20px;">Explore our services</a>
+            <a href="#contact" onClick="{{ nav.contact }}" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.09em; padding: 14px 20px;">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 2px solid var(--color-divider); background: var(--color-surface);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);">
+        <div style="display: grid; gap: 2px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); background: var(--color-divider); border: 2px solid var(--color-text); margin-bottom: clamp(34px, 5vw, 64px);" data-reveal="1">
+          <sc-for list="{{ aboutStats }}" as="s" hint-placeholder-count="4">
+            <div style="background: var(--color-surface); padding: clamp(20px, 3vw, 34px) clamp(16px, 2vw, 26px);">
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(36px, 5vw, 62px); letter-spacing: -0.05em; line-height: 1;">{{ s.n }}</div>
+              <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 8px; opacity: 0.65;">{{ s.k }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div data-reveal="1">
+          <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 16px;">What we stand for</p>
+          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 5vw, 62px); line-height: 1.0; letter-spacing: -0.04em; margin: 0 0 clamp(26px, 4vw, 44px);">Why choose GOSM</h2>
+        </div>
+        <div style="display: grid; gap: 2px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); background: var(--color-divider); border: 2px solid var(--color-text);" data-reveal="1">
+          <sc-for list="{{ valueProps }}" as="v" hint-placeholder-count="6">
+            <div style="background: var(--color-bg); padding: clamp(22px, 3vw, 34px);">
+              <div style="font-size: 12px; font-weight: 800; color: var(--color-accent); margin-bottom: 16px;">{{ v.no }}</div>
+              <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.8vw, 24px); letter-spacing: -0.025em; margin: 0 0 10px;">{{ v.title }}</h3>
+              <p class="text-muted" style="margin: 0;">{{ v.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--color-accent); color: #f3f2f2; border-bottom: 2px solid var(--color-text);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);" data-reveal="1">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(32px, 6vw, 80px); line-height: 0.96; letter-spacing: -0.045em; margin: 0 0 18px; max-width: 22ch;">Want to register as a service provider?</h2>
+        <p style="max-width: 50ch; font-size: clamp(16px, 1.4vw, 19px); margin: 0 0 28px;">We're onboarding verified vendors and providers across India, the UAE and Australia. Every application is reviewed before onboarding.</p>
+        <a href="#partner" onClick="{{ nav.partner }}" class="btn" style="background: var(--color-text); color: #f3f2f2; padding: 15px 24px; text-transform: uppercase; letter-spacing: 0.1em;">Partner with us</a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isServices }}">
+  <main>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(44px, 7vw, 96px) clamp(18px, 4vw, 64px);">
+        <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 20px;">Full catalogue</p>
+        <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 8vw, 108px); line-height: 0.94; letter-spacing: -0.045em; margin: 0 0 22px;">All GOSM services</h1>
+        <p class="text-muted" style="font-size: clamp(17px, 1.5vw, 21px); max-width: 50ch; margin: 0;">Twenty-two categories, over a hundred services. Book any of them with one form or one call.</p>
+      </div>
+    </section>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 64px) clamp(48px, 7vw, 96px);">
+        <div style="border-top: 2px solid var(--color-text);">
+          <sc-for list="{{ allCategories }}" as="c" hint-placeholder-count="8">
+            <div style="border-bottom: 1px solid var(--color-neutral-400); padding: clamp(20px, 2.4vw, 28px) 0; display: grid; gap: 14px clamp(24px, 4vw, 60px); grid-template-columns: minmax(0, 1fr); align-items: start;" data-svc-row="1" style-hover="background: var(--color-neutral-200);">
+              <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 2.1vw, 28px); letter-spacing: -0.03em; margin: 0; display: flex; gap: 14px;"><span style="font-size: 12px; font-weight: 800; color: var(--color-accent); letter-spacing: 0;">{{ c.no }}</span>{{ c.title }}</h3>
+              <p class="text-muted" style="margin: 0; max-width: 70ch;">{{ c.body }}</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="#home" onClick="{{ nav.homeEnquiry }}" class="btn btn-primary" style="text-transform: uppercase; letter-spacing: 0.08em;">Book now</a>
+                <a href="tel:7019183716" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.08em;">Call now</a>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+    <section style="background: var(--color-text); color: var(--color-bg); border-bottom: 2px solid var(--color-text);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);" data-reveal="1">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(32px, 6vw, 80px); line-height: 0.96; letter-spacing: -0.045em; margin: 0 0 18px; max-width: 22ch;">Don't see what you're looking for?</h2>
+        <p style="max-width: 48ch; font-size: clamp(16px, 1.4vw, 19px); margin: 0 0 28px; opacity: 0.8;">Tell us the task. If it's a home, family or business service, GOSM can likely help.</p>
+        <a href="#contact" onClick="{{ nav.contact }}" class="btn btn-primary" style="padding: 15px 24px; text-transform: uppercase; letter-spacing: 0.1em;">Contact us</a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isMembership }}">
+  <main>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(44px, 7vw, 96px) clamp(18px, 4vw, 64px);">
+        <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 20px;">Membership</p>
+        <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 8vw, 108px); line-height: 0.94; letter-spacing: -0.045em; margin: 0 0 22px; max-width: 18ch;">One membership. Every service.</h1>
+        <p class="text-muted" style="font-size: clamp(17px, 1.5vw, 21px); max-width: 52ch; margin: 0;">Members get priority scheduling, fixed member rates and a single point of contact across all 100+ GOSM services.</p>
+      </div>
+    </section>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(40px, 6vw, 88px) clamp(18px, 4vw, 64px);">
+        <div style="display: grid; gap: 2px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); background: var(--color-divider); border: 2px solid var(--color-text);" data-reveal="1">
+          <sc-for list="{{ plans }}" as="pl" hint-placeholder-count="3">
+            <div style="background: var(--color-bg); padding: clamp(24px, 3vw, 38px); display: flex; flex-direction: column; gap: 18px;">
+              <div>
+                <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 12px;">{{ pl.kicker }}</div>
+                <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(26px, 3vw, 38px); letter-spacing: -0.035em; margin: 0 0 10px;">{{ pl.name }}</h3>
+                <p class="text-muted" style="margin: 0;">{{ pl.who }}</p>
+              </div>
+              <div style="border-top: 2px solid var(--color-divider);">
+                <sc-for list="{{ pl.items }}" as="it" hint-placeholder-count="4">
+                  <div style="padding: 11px 0; border-bottom: 1px solid var(--color-neutral-300); display: flex; gap: 12px;"><span style="color: var(--color-accent); font-weight: 800;">✓</span><span>{{ it }}</span></div>
+                </sc-for>
+              </div>
+              <a href="#contact" onClick="{{ nav.contact }}" class="btn btn-primary btn-block" style="text-transform: uppercase; letter-spacing: 0.09em; padding: 14px 18px; margin-top: auto;">Request pricing</a>
+            </div>
+          </sc-for>
+        </div>
+        <p class="text-muted" style="margin: 20px 0 0; font-size: 13px;">Plan pricing is shared on request and varies by country.</p>
+      </div>
+    </section>
+    <section style="background: var(--color-accent); color: #f3f2f2; border-bottom: 2px solid var(--color-text);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(48px, 7vw, 104px) clamp(18px, 4vw, 64px);" data-reveal="1">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(32px, 6vw, 82px); line-height: 0.96; letter-spacing: -0.045em; margin: 0 0 18px; max-width: 20ch;">Not sure which plan fits?</h2>
+        <p style="max-width: 48ch; font-size: clamp(16px, 1.4vw, 19px); margin: 0 0 28px;">Call us and we'll size a membership around what your household or business actually uses.</p>
+        <a href="tel:7019183716" class="btn" style="background: var(--color-text); color: #f3f2f2; padding: 15px 24px; text-transform: uppercase; letter-spacing: 0.1em;">Call 7019183716</a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isPartner }}">
+  <main>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(44px, 7vw, 96px) clamp(18px, 4vw, 64px) clamp(40px, 6vw, 80px); display: grid; gap: clamp(30px, 5vw, 72px); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div>
+          <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 20px;">Partner</p>
+          <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 7vw, 96px); line-height: 0.94; letter-spacing: -0.045em; margin: 0 0 22px;">Be our partner</h1>
+          <p class="text-muted" style="font-size: clamp(16px, 1.4vw, 20px); max-width: 44ch; margin: 0 0 26px;">Join GOSM as a verified service provider across India, the UAE and Australia. Every application is reviewed before onboarding.</p>
+          <div style="border-top: 2px solid var(--color-divider);">
+            <div style="padding: 14px 0; border-bottom: 1px solid var(--color-neutral-300);">Steady, qualified work in your city.</div>
+            <div style="padding: 14px 0; border-bottom: 1px solid var(--color-neutral-300);">You set your rates; we handle the enquiries.</div>
+            <div style="padding: 14px 0;">Verification badge that customers actually trust.</div>
+          </div>
+        </div>
+        <div style="background: var(--color-surface); border: 2px solid var(--color-text); padding: clamp(20px, 3vw, 36px);">
+          <sc-if value="{{ partnerSent }}">
+            <div style="padding: 28px 0;">
+              <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 12px;">Application received</p>
+              <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.03em; margin: 0 0 12px;">Thanks for registering.</h3>
+              <p class="text-muted" style="margin: 0 0 22px;">Our onboarding team reviews every application and will contact you on the number you provided.</p>
+              <button type="button" onClick="{{ resetPartner }}" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.08em;">Register another</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ partnerOpen }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitPartner }}" style="display: grid; gap: 14px;">
+            <div class="field">
+              <label>Register As *</label>
+              <div class="seg">
+                <label class="seg-opt"><input type="radio" name="gosm-role" value="Partner" checked="{{ roleIsPartner }}" onChange="{{ pickPartner }}">Partner</label>
+                <label class="seg-opt"><input type="radio" name="gosm-role" value="Student" checked="{{ roleIsStudent }}" onChange="{{ pickStudent }}">Student</label>
+              </div>
+            </div>
+            <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+              <div class="field"><label for="p-name">Full Name *</label><input class="input" id="p-name" value="{{ pv.name }}" onChange="{{ ph.name }}" placeholder="Your name"></div>
+              <div class="field"><label for="p-phone">Phone Number *</label><input class="input" id="p-phone" value="{{ pv.phone }}" onChange="{{ ph.phone }}" placeholder="10-digit number"></div>
+            </div>
+            <div class="field"><label for="p-email">Email Address *</label><input class="input" id="p-email" type="email" value="{{ pv.email }}" onChange="{{ ph.email }}" placeholder="you@example.com"></div>
+            <div class="field"><label for="p-service">Service *</label>
+              <select class="input" id="p-service" value="{{ pv.service }}" onChange="{{ ph.service }}">
+                <option value="">--Service--</option>
+                <sc-for list="{{ partnerServiceNames }}" as="s" hint-placeholder-count="4"><option value="{{ s }}">{{ s }}</option></sc-for>
+              </select>
+            </div>
+            <div class="field"><label for="p-skills">Skills / Expertise Description *</label><textarea class="input" id="p-skills" rows="3" value="{{ pv.skills }}" onChange="{{ ph.skills }}" placeholder="What you do and where you work"></textarea></div>
+            <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+              <div class="field"><label for="p-exp">Experience (Years of Service) *</label><input class="input" id="p-exp" type="number" min="0" value="{{ pv.experience }}" onChange="{{ ph.experience }}" placeholder="e.g. 6"></div>
+              <div class="field"><label for="p-loc">Location (Country / City) *</label>
+                <select class="input" id="p-loc" value="{{ pv.location }}" onChange="{{ ph.location }}">
+                  <option value="">--Location--</option>
+                  <sc-for list="{{ partnerLocations }}" as="l" hint-placeholder-count="4"><option value="{{ l }}">{{ l }}</option></sc-for>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="p-id">ID Proof (Aadhaar, PAN, or other verification)</label><input class="input" id="p-id" type="file" onChange="{{ ph.idProof }}"></div>
+            <div class="field"><label for="p-addr">Address *</label><input class="input" id="p-addr" value="{{ pv.address }}" onChange="{{ ph.address }}" placeholder="Street, area, city"></div>
+            <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; cursor: pointer;">
+              <input type="checkbox" checked="{{ pv.terms }}" onChange="{{ ph.terms }}" style="margin-top: 4px; accent-color: var(--color-accent);">
+              <span>I agree to the terms and conditions *</span>
+            </label>
+            <sc-if value="{{ partnerError }}">
+              <p style="margin: 0; font-size: 13px; font-weight: 600; color: var(--color-accent-700);">{{ partnerError }}</p>
+            </sc-if>
+            <button type="submit" class="btn btn-primary" style="justify-content: flex-start; padding: 15px 22px; text-transform: uppercase; letter-spacing: 0.1em;">Register now</button>
+          </form>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}">
+  <main>
+    <section style="border-bottom: 2px solid var(--color-divider);">
+      <div style="max-width: 1480px; margin: 0 auto; padding: clamp(44px, 7vw, 96px) clamp(18px, 4vw, 64px) clamp(40px, 6vw, 80px); display: grid; gap: clamp(30px, 5vw, 72px); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div>
+          <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 20px;">Get in touch</p>
+          <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 7vw, 96px); line-height: 0.94; letter-spacing: -0.045em; margin: 0 0 22px; max-width: 16ch;">Let's talk about what you need.</h1>
+          <p class="text-muted" style="max-width: 42ch; margin: 0 0 30px;">Questions about a service, vendor registration, or anything else — send a message and our team will respond shortly.</p>
+          <div style="border-top: 2px solid var(--color-text);">
+            <div style="padding: 18px 0; border-bottom: 1px solid var(--color-neutral-400);">
+              <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Call us</div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 2vw, 26px); letter-spacing: -0.03em; display: flex; flex-wrap: wrap; gap: 6px 16px;"><a href="tel:+917019183716">7019183716</a><a href="tel:+919810767893">9810767893</a></div>
+              <div class="text-muted" style="font-size: 14px; margin-top: 4px;">Available every day.</div>
+            </div>
+            <div style="padding: 18px 0; border-bottom: 1px solid var(--color-neutral-400);">
+              <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Email us</div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(20px, 2vw, 26px); letter-spacing: -0.03em;"><a href="mailto:info@gosm.in">info@gosm.in</a></div>
+            </div>
+            <div style="padding: 18px 0;">
+              <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Visit us</div>
+              <p style="margin: 0;">GOSM Solutions Pvt. Ltd. — HQ in Bangalore, India. Serving India, UAE &amp; Australia.</p>
+            </div>
+          </div>
+        </div>
+        <div style="background: var(--color-surface); border: 2px solid var(--color-text); padding: clamp(20px, 3vw, 36px); align-self: start;">
+          <sc-if value="{{ contactSent }}">
+            <div style="padding: 28px 0;">
+              <p style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; color: var(--color-accent-700); margin: 0 0 12px;">Message sent</p>
+              <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.03em; margin: 0 0 12px;">We'll be in touch.</h3>
+              <p class="text-muted" style="margin: 0 0 22px;">Our team replies to messages the same working day.</p>
+              <button type="button" onClick="{{ resetContact }}" class="btn btn-secondary" style="text-transform: uppercase; letter-spacing: 0.08em;">Send another</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ contactOpen }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitContact }}" style="display: grid; gap: 14px;">
+            <div class="field"><label for="c-name">Full Name</label><input class="input" id="c-name" value="{{ cv.name }}" onChange="{{ ch.name }}" placeholder="Your name"></div>
+            <div class="field"><label for="c-phone">Phone Number</label><input class="input" id="c-phone" value="{{ cv.phone }}" onChange="{{ ch.phone }}" placeholder="10-digit number"></div>
+            <div class="field"><label for="c-email">Email (optional)</label><input class="input" id="c-email" type="email" value="{{ cv.email }}" onChange="{{ ch.email }}" placeholder="you@example.com"></div>
+            <div class="field"><label for="c-msg">Message</label><textarea class="input" id="c-msg" rows="5" value="{{ cv.message }}" onChange="{{ ch.message }}" placeholder="How can we help?"></textarea></div>
+            <sc-if value="{{ contactError }}">
+              <p style="margin: 0; font-size: 13px; font-weight: 600; color: var(--color-accent-700);">{{ contactError }}</p>
+            </sc-if>
+            <button type="submit" class="btn btn-primary" style="justify-content: flex-start; padding: 15px 22px; text-transform: uppercase; letter-spacing: 0.1em;">Send message</button>
+          </form>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="background: var(--color-text); color: var(--color-bg);">
+    <div style="max-width: 1480px; margin: 0 auto; padding: clamp(40px, 6vw, 84px) clamp(18px, 4vw, 64px) 0; display: grid; gap: clamp(28px, 4vw, 56px); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <svg width="50" height="50" viewBox="0 0 64 64" style="display: block; flex: none;" aria-hidden="true">
+            <path d="M46.8 17.2 A21 21 0 1 0 51.7 39.2 L34 39.2" fill="none" stroke="#f47c20" stroke-width="8"></path>
+            <path d="M19 32.5 L28.5 42.5 L46 19.5" fill="none" stroke="#3fbf46" stroke-width="8"></path>
+          </svg>
+          <span style="display: grid; gap: 2px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 28px; line-height: 1; letter-spacing: -0.04em;">GOSM</span>
+            <span style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6;">Solutions Pvt. Ltd.</span>
+          </span>
+        </div>
+        <p style="max-width: 34ch; opacity: 0.72; margin: 0;">GOSM Solutions Pvt. Ltd. — connecting homes, families and businesses to verified service providers.</p>
+      </div>
+      <div>
+        <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-400); margin-bottom: 16px;">Company</div>
+        <div style="display: grid; gap: 9px;">
+          <a href="#about" onClick="{{ nav.about }}" style="color: var(--color-bg); opacity: 0.85;">About us</a>
+          <a href="#services" onClick="{{ nav.services }}" style="color: var(--color-bg); opacity: 0.85;">Services</a>
+          <a href="#partner" onClick="{{ nav.partner }}" style="color: var(--color-bg); opacity: 0.85;">Vendor registration</a>
+          <a href="#contact" onClick="{{ nav.contact }}" style="color: var(--color-bg); opacity: 0.85;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-400); margin-bottom: 16px;">Services</div>
+        <div style="display: grid; gap: 9px;">
+          <a href="#services" onClick="{{ nav.services }}" style="color: var(--color-bg); opacity: 0.85;">All services</a>
+          <a href="#membership" onClick="{{ nav.membership }}" style="color: var(--color-bg); opacity: 0.85;">Membership plans</a>
+          <a href="#home" onClick="{{ nav.homeEnquiry }}" style="color: var(--color-bg); opacity: 0.85;">Book a service</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-400); margin-bottom: 16px;">Contact</div>
+        <div style="display: grid; gap: 9px;">
+          <a href="tel:7019183716" style="color: var(--color-bg); opacity: 0.85;">7019183716</a>
+          <a href="tel:9810767893" style="color: var(--color-bg); opacity: 0.85;">9810767893</a>
+          <a href="mailto:info@gosm.in" style="color: var(--color-bg); opacity: 0.85;">info@gosm.in</a>
+          <span style="opacity: 0.6;">India · UAE · Australia</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1480px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 64px);">
+      <div style="margin-top: clamp(34px, 5vw, 64px); border-top: 1px solid rgba(243,242,242,0.25); padding: 20px 0 30px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 12.5px; opacity: 0.65;">
+        <span>© 2026 GOSM Solutions Pvt. Ltd. All rights reserved.</span>
+        <a href="https://gosm.co.in/Admin/Account/Login" style="color: var(--color-bg); margin-left: auto;">Admin login</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTopBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;homeServiceCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:3,&quot;max&quot;:22,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+const CATEGORIES = [
+  ["Home & Apartment Services", "Maid and house help, deep cleaning, plumbing, electrical work, carpentry, painting, civil repairs, waterproofing, pest control, AC servicing, appliance repair, RO and water purifier services, interior and modular work."],
+  ["Family & Personal Services", "Elder care, home nursing, babysitting and nanny services, doctor appointment assistance, home tuition, yoga and fitness training, pet care, salon and beauty services."],
+  ["Vehicle & Logistics", "Car washing, detailing, vehicle servicing, professional drivers, packing and moving, pickup and delivery, and reliable transportation and logistics solutions."],
+  ["Apartment & Facility Management", "Building maintenance, housekeeping, common-area cleaning, security coordination, water management, facility staffing and professional vendor management."],
+  ["Construction & Renovation", "Skilled workers, masonry, fitting, painting, plastering, waterproofing, flooring, tiling, false ceilings, fabrication, architectural services, interior design and complete renovation work."],
+  ["Water Services", "Water tanker coordination, RO servicing, water purification, plumbing, water-tank cleaning, and maintenance of residential and commercial water systems."],
+  ["Healthcare Support", "Home nursing, patient care, elder care, hospital assistance, doctor coordination, physiotherapy coordination and dependable medical support at home."],
+  ["Education & Career", "Home and online tuition, skill development, career counselling, education counselling, music lessons, yoga training and personalised guidance for students."],
+  ["Pet Services", "Professional grooming, pet walking, pet sitting, boarding, and veterinary appointment coordination."],
+  ["Laundry & Household", "Washing, ironing, dry cleaning, pickup and delivery, clothes care, home organisation and everyday household assistance."],
+  ["Business Services", "Office housekeeping, facility management, manpower assistance, courier services, document handling, data entry, administrative and back-office support."],
+  ["Banking Outsourcing", "Permitted outsourced activities: back-office operations, data entry, document scanning, KYC processing, loan documentation, field verification, call-centre support and ATM maintenance assistance."],
+  ["Insurance Services", "Life, health, motor, home, travel, commercial and crop policies, with renewals, follow-ups and timely reminders through authorised personnel."],
+  ["Security & Manpower", "Security coordination, housekeeping staff, facility personnel and maintenance workers for residential, commercial and institutional requirements."],
+  ["Food & Catering", "Daily tiffin services, event catering, food supply and customised catering arrangements to suit your requirements and budget."],
+  ["Events", "Event planning and management, venue decoration, catering, photography and videography, furniture rental, sound, lighting and full arrangements."],
+  ["Travel", "Flight, train and bus bookings, hotel reservations, travel agent support and corporate travel services."],
+  ["Professional Services", "Legal support, financial counselling, insurance assistance, taxation guidance, accounting support and other specialised professional services."],
+  ["Vendor & Procurement", "Building materials, furniture, electrical and plumbing supplies, paints and construction materials through reliable vendor networks."],
+  ["Technology Services", "Computer repair, IT assistance, networking, software support, digital services, website development and everyday business technology needs."],
+  ["Business Growth Services", "Lead generation, marketing assistance, outsourcing, customer service, sales support and operational solutions to improve reach and efficiency."],
+  ["Student Enrollment & Education Fee Programme", "Student registration, school and college fee facilitation, account tracking, annual education planning, scholarship guidance, counselling, digital receipts and education-fee assistance."]
+];
+
+const CITIES = {
+  India: ["Bangalore", "Hyderabad", "Chennai", "Mumbai", "Delhi NCR", "Pune", "Hassan", "Davangere"],
+  UAE: ["Dubai", "Abu Dhabi", "Sharjah"],
+  Australia: ["Sydney", "Melbourne", "Brisbane", "Perth"]
+};
+
+const PAGES = ["home", "about", "services", "membership", "partner", "contact"];
+
+class Component extends DCLogic {
+  state = {
+    page: "home", menuOpen: false, intro: "running",
+    enquiry: { name: "", phone: "", service: "", persons: "", country: "", city: "", address: "", date: "", time: "" },
+    enquiryError: "", enquirySent: false,
+    partner: { role: "Partner", name: "", phone: "", email: "", service: "", skills: "", experience: "", location: "", address: "", terms: false },
+    partnerError: "", partnerSent: false,
+    contact: { name: "", phone: "", email: "", message: "" },
+    contactError: "", contactSent: false
+  };
+
+  componentDidMount() {
+    this.runIntro();
+    this.syncFromHash();
+    this._onHash = () => this.syncFromHash();
+    window.addEventListener("hashchange", this._onHash);
+    this.mountReveals();
+    this.mountResponsive();
+    this.cacheNodes();
+    this._onScroll = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = null;
+        this.paintScroll();
+      });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    window.addEventListener("resize", this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.page !== this.state.page || prevState.menuOpen !== this.state.menuOpen || prevState.intro !== this.state.intro) {
+      this.mountReveals();
+      this.applyResponsive();
+      this.cacheNodes();
+      this.paintScroll();
+    }
+  }
+
+  cacheNodes() {
+    this._bar = document.querySelector("[data-scrollbar]");
+    this._plx = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]")).map(el => ({
+      el: el,
+      speed: parseFloat(el.getAttribute("data-parallax")) || 0.12,
+      host: el.parentElement
+    }));
+  }
+
+  paintScroll() {
+    const y = window.pageYOffset || 0;
+    const vh = window.innerHeight;
+    const max = Math.max(1, document.documentElement.scrollHeight - vh);
+    if (this._bar) this._bar.style.transform = "scaleX(" + Math.min(1, y / max).toFixed(4) + ")";
+    for (let i = 0; i < this._plx.length; i++) {
+      const p = this._plx[i];
+      const host = p.host;
+      if (!host) continue;
+      const top = host.offsetTop, h = host.offsetHeight;
+      if (top + h < y - vh || top > y + vh * 2) continue;
+      const off = (top + h / 2 - (y + vh / 2)) * -p.speed;
+      p.el.style.transform = "translate3d(0," + off.toFixed(1) + "px,0) scale(1.14)";
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    window.removeEventListener("resize", this._onScroll);
+    cancelAnimationFrame(this._introRaf);
+    clearTimeout(this._introDone);
+    window.removeEventListener("hashchange", this._onHash);
+    if (this._mq && this._onMq) this._mq.removeEventListener("change", this._onMq);
+  }
+
+  runIntro() {
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      document.documentElement.setAttribute("data-gosm-intro", "skip");
+      this.setState({ intro: "done" });
+      return;
+    }
+    document.documentElement.removeAttribute("data-gosm-intro");
+    const start = performance.now(), dur = 2200;
+    const labels = ["Verified providers", "100+ services", "Three countries", "One platform"];
+    const bar = () => document.querySelector("[data-intro-bar]");
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - t, 2);
+      const b = bar();
+      if (b) b.style.transform = "scaleX(" + eased.toFixed(4) + ")";
+      const pctEl = document.querySelector("[data-intro-pct]");
+      if (pctEl) pctEl.textContent = String(Math.round(eased * 100)).padStart(2, "0") + "%";
+      const lab = document.querySelector("[data-intro-label]");
+      if (lab) {
+        const next = labels[Math.min(3, Math.floor(eased * 4))];
+        if (lab.textContent !== next) lab.textContent = next;
+      }
+      if (t < 1) { this._introRaf = requestAnimationFrame(step); return; }
+      this.setState({ intro: "lifting" });
+      this._introDone = setTimeout(() => {
+        document.documentElement.setAttribute("data-gosm-intro", "skip");
+        this.setState({ intro: "done" });
+      }, 1500);
+    };
+    this._introRaf = requestAnimationFrame(step);
+  }
+
+  syncFromHash() {
+    const h = (window.location.hash || "").replace("#", "");
+    if (PAGES.indexOf(h) >= 0 && h !== this.state.page) this.setState({ page: h, menuOpen: false });
+  }
+
+  mountResponsive() {
+    if (!this._mq) {
+      this._mq = window.matchMedia("(min-width: 1080px)");
+      this._onMq = () => this.applyResponsive();
+      this._mq.addEventListener("change", this._onMq);
+    }
+    this.applyResponsive();
+  }
+  applyResponsive() {
+    const wide = this._mq && this._mq.matches;
+    const nav = document.querySelector("[data-desktop-nav]");
+    const tog = document.querySelector("[data-mobile-toggle]");
+    if (nav) nav.style.display = wide ? "flex" : "none";
+    if (tog) tog.style.display = wide ? "none" : "flex";
+    if (wide && this.state.menuOpen) this.setState({ menuOpen: false });
+    const pg = document.querySelector("[data-popular-grid]");
+    if (pg) pg.style.gridTemplateColumns = wide ? "repeat(4, minmax(0, 1fr))" : "repeat(2, minmax(0, 1fr))";
+    document.querySelectorAll("[data-svc-row]").forEach(el => {
+      el.style.gridTemplateColumns = wide ? "minmax(200px, 1fr) minmax(260px, 2fr) auto" : "minmax(0, 1fr)";
+    });
+  }
+
+  mountReveals() {
+    if (!("IntersectionObserver" in window)) return;
+    if (!this._io) {
+      this._io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          e.target.style.animation = "gosm-rise .72s cubic-bezier(.2,.75,.2,1) forwards";
+          e.target.dataset.revealed = "1";
+          this._io.unobserve(e.target);
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -8% 0px" });
+    }
+    document.querySelectorAll("[data-reveal]").forEach(el => {
+      if (el.dataset.revealed || el.dataset.revealWatched) return;
+      el.dataset.revealWatched = "1";
+      el.style.opacity = "0";
+      this._io.observe(el);
+    });
+    if (!this._wio) {
+      this._wio = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const words = Array.prototype.slice.call(e.target.querySelectorAll("[data-word]"));
+          words.forEach((w, i) => {
+            w.style.animation = "gosm-word .9s cubic-bezier(.2,.75,.2,1) " + (i * 0.11) + "s both";
+          });
+          e.target.dataset.wordsDone = "1";
+          this._wio.unobserve(e.target);
+        });
+      }, { threshold: 0.25 });
+    }
+    document.querySelectorAll("[data-words]").forEach(el => {
+      if (el.dataset.wordsDone || el.dataset.wordsWatched) return;
+      el.dataset.wordsWatched = "1";
+      el.querySelectorAll("[data-word]").forEach(w => { w.style.opacity = "0"; });
+      this._wio.observe(el);
+    });
+  }
+
+  go(page) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState({ page: page, menuOpen: false }, () => {
+        try { history.replaceState(null, "", "#" + page); } catch (err) {}
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
+    };
+  }
+
+  goHomeEnquiry = (e) => {
+    if (e) e.preventDefault();
+    this.setState({ page: "home", menuOpen: false }, () => {
+      setTimeout(() => {
+        const t = document.getElementById("enquiry");
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 70, behavior: "smooth" });
+      }, 60);
+    });
+  };
+
+  field(form, key, type) {
+    return (e) => {
+      const v = type === "check" ? e.target.checked : (type === "file" ? (e.target.files && e.target.files[0] ? e.target.files[0].name : "") : e.target.value);
+      this.setState(s => {
+        const next = Object.assign({}, s[form]);
+        next[key] = v;
+        if (form === "enquiry" && key === "country") next.city = "";
+        const patch = {};
+        patch[form] = next;
+        patch[form + "Error"] = "";
+        return patch;
+      });
+    };
+  }
+
+  handlers(form, keys) {
+    const out = {};
+    keys.forEach(k => { out[k] = this.field(form, k); });
+    return out;
+  }
+
+  submitEnquiry = (e) => {
+    e.preventDefault();
+    const f = this.state.enquiry;
+    const req = ["name", "phone", "service", "persons", "country", "city", "address", "date", "time"];
+    const missing = req.filter(k => !String(f[k] || "").trim());
+    if (missing.length) return this.setState({ enquiryError: "Please complete every required field before submitting." });
+    if (!/^[0-9+\-\s]{7,16}$/.test(f.phone)) return this.setState({ enquiryError: "Please enter a valid phone number." });
+    this.setState({ enquirySent: true, enquiryError: "" });
+  };
+  resetEnquiry = () => this.setState({
+    enquirySent: false,
+    enquiry: { name: "", phone: "", service: "", persons: "", country: "", city: "", address: "", date: "", time: "" }
+  });
+
+  setRole(role) {
+    return () => this.setState(s => ({ partner: Object.assign({}, s.partner, { role: role }) }));
+  }
+  submitPartner = (e) => {
+    e.preventDefault();
+    const f = this.state.partner;
+    const req = ["name", "phone", "email", "service", "skills", "experience", "location", "address"];
+    if (req.filter(k => !String(f[k] || "").trim()).length) return this.setState({ partnerError: "Please complete every required field." });
+    if (!f.terms) return this.setState({ partnerError: "Please accept the terms and conditions." });
+    this.setState({ partnerSent: true, partnerError: "" });
+  };
+  resetPartner = () => this.setState({
+    partnerSent: false,
+    partner: { role: "Partner", name: "", phone: "", email: "", service: "", skills: "", experience: "", location: "", address: "", terms: false }
+  });
+
+  submitContact = (e) => {
+    e.preventDefault();
+    const f = this.state.contact;
+    if (!f.name.trim() || !f.phone.trim() || !f.message.trim()) return this.setState({ contactError: "Name, phone and message are required." });
+    this.setState({ contactSent: true, contactError: "" });
+  };
+  resetContact = () => this.setState({ contactSent: false, contact: { name: "", phone: "", email: "", message: "" } });
+
+  renderVals() {
+    const s = this.state;
+    const cats = CATEGORIES.map((c, i) => ({ no: String(i + 1).padStart(2, "0"), title: c[0], body: c[1] }));
+    const names = CATEGORIES.map(c => c[0]);
+    const locs = [];
+    Object.keys(CITIES).forEach(country => CITIES[country].forEach(c => locs.push(c + ", " + country)));
+
+    const p = this.props || {};
+    return {
+      introRunning: s.intro === "running",
+      introLifting: s.intro === "lifting",
+      showTopBar: p.showTopBar ?? true,
+      showMarquee: p.showMarquee ?? true,
+      nav: {
+        home: this.go("home"), about: this.go("about"), services: this.go("services"),
+        membership: this.go("membership"), partner: this.go("partner"), contact: this.go("contact"),
+        homeEnquiry: this.goHomeEnquiry
+      },
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      menuOpen: s.menuOpen,
+      isHome: s.page === "home", isAbout: s.page === "about", isServices: s.page === "services",
+      isMembership: s.page === "membership", isPartner: s.page === "partner", isContact: s.page === "contact",
+
+      popular: [
+        { title: "Plumber", alt: "Professional plumber", bg: "url('https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=900')" },
+        { title: "Electrician", alt: "Professional electrician", bg: "url('https://images.pexels.com/photos/5691588/pexels-photo-5691588.jpeg?auto=compress&cs=tinysrgb&w=900')" },
+        { title: "Painter", alt: "Professional painter", bg: "url('https://images.pexels.com/photos/31544574/pexels-photo-31544574.jpeg?auto=compress&cs=tinysrgb&w=900')" },
+        { title: "Carpenter", alt: "Professional carpenter", bg: "url('https://images.pexels.com/photos/38709542/pexels-photo-38709542.jpeg?auto=compress&cs=tinysrgb&w=900')" }
+      ],
+      stripDouble: (() => {
+        const urls = [
+          "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "https://images.pexels.com/photos/5691588/pexels-photo-5691588.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "https://images.pexels.com/photos/31544574/pexels-photo-31544574.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "https://images.pexels.com/photos/38709542/pexels-photo-38709542.jpeg?auto=compress&cs=tinysrgb&w=700",
+          "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=700"
+        ];
+        return urls.concat(urls).map(u => ({ bg: "url('" + u + "')" }));
+      })(),
+      whyPoints: [
+        "One trusted platform for 100+ services",
+        "Verified, not just listed, professionals",
+        "Global reach, local execution — India, UAE and Australia",
+        "Transparent, upfront pricing"
+      ],
+      stats: [{ n: "100+", k: "Services" }, { n: "24/7", k: "Support" }, { n: "3", k: "Countries" }, { n: "100%", k: "Verified" }],
+      aboutStats: [{ n: "100+", k: "Services" }, { n: "24/7", k: "Support" }, { n: "3", k: "Countries" }, { n: "2026", k: "Launched in" }],
+      aboutPoints: [
+        "Home, family and lifestyle services under one platform",
+        "Every provider background-verified before onboarding",
+        "Transparent, upfront pricing across every category",
+        "Available across India, the UAE and Australia"
+      ],
+      valueProps: [
+        { no: "01", title: "One trusted platform", body: "Every category, every professional — instead of a dozen separate apps and phone numbers." },
+        { no: "02", title: "Verified providers", body: "Professionals pass background checks before they're on GOSM, not after a bad experience." },
+        { no: "03", title: "Wide range of services", body: "Global reach with local execution, covering every home and commercial maintenance need." },
+        { no: "04", title: "Quick and hassle-free", body: "Instant booking, fast turnaround and seamless execution at your doorstep." },
+        { no: "05", title: "Affordable pricing", body: "Transparent rates with zero hidden charges across India, the UAE and Australia." },
+        { no: "06", title: "24/7 support", body: "A round-the-clock help desk behind every service order." }
+      ],
+      regions: [
+        { name: "India", cities: CITIES.India.slice(0, 4) },
+        { name: "UAE", cities: CITIES.UAE },
+        { name: "Australia", cities: CITIES.Australia.slice(0, 3) }
+      ],
+      plans: [
+        { kicker: "Plan 01", name: "Essential", who: "For individuals and small households.", items: ["Priority booking on all home services", "Member rates on repairs and cleaning", "One coordinator for every request", "24/7 help desk"] },
+        { kicker: "Plan 02", name: "Family", who: "For families with care and education needs.", items: ["Everything in Essential", "Elder care and home nursing coordination", "Tuition and counselling support", "Quarterly home maintenance visit"] },
+        { kicker: "Plan 03", name: "Business", who: "For offices, apartments and facilities.", items: ["Everything in Family", "Facility and manpower management", "Vendor and procurement support", "Dedicated account manager"] }
+      ],
+      topCategories: cats.slice(0, Math.max(3, Math.min(22, p.homeServiceCount ?? 9))),
+      allCategories: cats,
+      serviceNames: names,
+      partnerServiceNames: names,
+      partnerLocations: locs,
+
+      ev: s.enquiry,
+      eh: this.handlers("enquiry", ["name", "phone", "service", "persons", "country", "city", "address", "date", "time"]),
+      cityOptions: CITIES[s.enquiry.country] || [],
+      enquiryError: s.enquiryError,
+      enquirySent: s.enquirySent,
+      enquiryOpen: !s.enquirySent,
+      submitEnquiry: this.submitEnquiry,
+      resetEnquiry: this.resetEnquiry,
+
+      pv: s.partner,
+      ph: Object.assign(this.handlers("partner", ["name", "phone", "email", "service", "skills", "experience", "location", "address"]), {
+        terms: this.field("partner", "terms", "check"),
+        idProof: this.field("partner", "idProof", "file")
+      }),
+      roleIsPartner: s.partner.role === "Partner",
+      roleIsStudent: s.partner.role === "Student",
+      pickPartner: this.setRole("Partner"),
+      pickStudent: this.setRole("Student"),
+      partnerError: s.partnerError,
+      partnerSent: s.partnerSent,
+      partnerOpen: !s.partnerSent,
+      submitPartner: this.submitPartner,
+      resetPartner: this.resetPartner,
+
+      cv: s.contact,
+      ch: this.handlers("contact", ["name", "phone", "email", "message"]),
+      contactError: s.contactError,
+      contactSent: s.contactSent,
+      contactOpen: !s.contactSent,
+      submitContact: this.submitContact,
+      resetContact: this.resetContact
+    };
+  }
+}
+</script>
+</body>
+</html>
