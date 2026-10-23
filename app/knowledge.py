@@ -35,12 +35,15 @@ def check_playbook(playbook):
     if stage_ids != set(STAGES):
         problems.append(f"stages must be exactly {STAGES}, got {sorted(stage_ids)}")
 
+    region_ids = {r["id"] for r in playbook.get("regions", [])}
     book_ids = set()
     for book in playbook.get("books", []):
         bid = book.get("id")
         if not bid or bid in book_ids:
             problems.append(f"missing or duplicate book id: {bid!r}")
         book_ids.add(bid)
+        if book.get("region") not in region_ids:
+            problems.append(f"book {bid}: unknown region {book.get('region')!r}")
         if not book.get("principles"):
             problems.append(f"book {bid} has no principles")
         for p in book.get("principles", []):

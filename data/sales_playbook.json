@@ -3,13 +3,41 @@
   "about": "Sales methods from well-known sales books, summarised in our own words (no book text is copied) and adapted to a short, calm, Kannada phone call for SourceCode Studio. Facts about products still come only from knowledge_base.json.",
   "kannada_reviewed": false,
   "stages": [
-    {"id": "opening", "name": "Opening", "goal": "Disclose the AI, earn 30 seconds of attention, set a clear purpose for the call."},
-    {"id": "discovery", "name": "Discovery", "goal": "Understand their real day-to-day problem before talking about any product."},
-    {"id": "value", "name": "Value", "goal": "Recommend ONE product, in their words, tied to the problem they described."},
-    {"id": "objection", "name": "Objections", "goal": "Treat concerns as questions; understand them before answering."},
-    {"id": "close", "name": "Close", "goal": "Invite to a free demo with a specific, low-effort next step."},
-    {"id": "follow_up", "name": "Follow-up", "goal": "End warmly, respect a 'no', keep the door open without pressure."},
-    {"id": "mindset", "name": "Mindset", "goal": "How the consultant thinks and sounds through the whole call."}
+    {
+      "id": "opening",
+      "name": "Opening",
+      "goal": "Disclose the AI, earn 30 seconds of attention, set a clear purpose for the call."
+    },
+    {
+      "id": "discovery",
+      "name": "Discovery",
+      "goal": "Understand their real day-to-day problem before talking about any product."
+    },
+    {
+      "id": "value",
+      "name": "Value",
+      "goal": "Recommend ONE product, in their words, tied to the problem they described."
+    },
+    {
+      "id": "objection",
+      "name": "Objections",
+      "goal": "Treat concerns as questions; understand them before answering."
+    },
+    {
+      "id": "close",
+      "name": "Close",
+      "goal": "Invite to a free demo with a specific, low-effort next step."
+    },
+    {
+      "id": "follow_up",
+      "name": "Follow-up",
+      "goal": "End warmly, respect a 'no', keep the door open without pressure."
+    },
+    {
+      "id": "mindset",
+      "name": "Mindset",
+      "goal": "How the consultant thinks and sounds through the whole call."
+    }
   ],
   "books": [
     {
@@ -19,11 +47,34 @@
       "year": 1988,
       "core_idea": "In bigger sales, questions win more than pitches. Move from Situation to Problem to Implication to Need-payoff questions.",
       "principles": [
-        {"stage": "discovery", "rule": "Ask only a few Situation questions; the customer gets bored answering facts you could have guessed.", "on_our_call": "One quick fact question, e.g. how many forms they fill on a busy day, then move on."},
-        {"stage": "discovery", "rule": "Problem questions uncover what is hard or slow for them.", "on_our_call": "Ask what is hardest during scholarship or exam season.", "example_en": "During the scholarship rush, what takes the most time for your staff?", "example_kn": "ಸ್ಕಾಲರ್‌ಶಿಪ್ ಸೀಸನ್‌ನಾಗ ನಿಮ್ ಸ್ಟಾಫ್‌ಗೆ ಯಾವ ಕೆಲಸ ಜಾಸ್ತಿ ಟೈಮ್ ತಗೊಳ್ತದರೀ?"},
-        {"stage": "discovery", "rule": "Implication questions make the cost of the problem clear: lost time, lost customers, mistakes.", "on_our_call": "Ask what happens when the queue gets long or a form is rejected.", "example_en": "When the queue is long, do some customers leave and go elsewhere?", "example_kn": "ಲೈನ್ ಉದ್ದ ಆದಾಗ ಕೆಲವು ಗಿರಾಕಿಗಳು ಬ್ಯಾರೆ ಕಡೆ ಹೋಗ್ತಾರೇನ್ರೀ?"},
-        {"stage": "value", "rule": "Need-payoff questions let the customer say the benefit out loud, which convinces them more than you saying it.", "on_our_call": "Ask what it would mean if forms took half the time.", "example_en": "If each form took half the time, what would that change for you?", "example_kn": "ಒಂದೊಂದು ಫಾರ್ಮ್ ಅರ್ಧ ಟೈಮ್‌ನಾಗ ಆದ್ರ, ನಿಮಗ ಏನು ಉಪಯೋಗ ಆಗ್ತದರೀ?"}
-      ]
+        {
+          "stage": "discovery",
+          "rule": "Ask only a few Situation questions; the customer gets bored answering facts you could have guessed.",
+          "on_our_call": "One quick fact question, e.g. how many forms they fill on a busy day, then move on."
+        },
+        {
+          "stage": "discovery",
+          "rule": "Problem questions uncover what is hard or slow for them.",
+          "on_our_call": "Ask what is hardest during scholarship or exam season.",
+          "example_en": "During the scholarship rush, what takes the most time for your staff?",
+          "example_kn": "ಸ್ಕಾಲರ್‌ಶಿಪ್ ಸೀಸನ್‌ನಾಗ ನಿಮ್ ಸ್ಟಾಫ್‌ಗೆ ಯಾವ ಕೆಲಸ ಜಾಸ್ತಿ ಟೈಮ್ ತಗೊಳ್ತದರೀ?"
+        },
+        {
+          "stage": "discovery",
+          "rule": "Implication questions make the cost of the problem clear: lost time, lost customers, mistakes.",
+          "on_our_call": "Ask what happens when the queue gets long or a form is rejected.",
+          "example_en": "When the queue is long, do some customers leave and go elsewhere?",
+          "example_kn": "ಲೈನ್ ಉದ್ದ ಆದಾಗ ಕೆಲವು ಗಿರಾಕಿಗಳು ಬ್ಯಾರೆ ಕಡೆ ಹೋಗ್ತಾರೇನ್ರೀ?"
+        },
+        {
+          "stage": "value",
+          "rule": "Need-payoff questions let the customer say the benefit out loud, which convinces them more than you saying it.",
+          "on_our_call": "Ask what it would mean if forms took half the time.",
+          "example_en": "If each form took half the time, what would that change for you?",
+          "example_kn": "ಒಂದೊಂದು ಫಾರ್ಮ್ ಅರ್ಧ ಟೈಮ್‌ನಾಗ ಆದ್ರ, ನಿಮಗ ಏನು ಉಪಯೋಗ ಆಗ್ತದರೀ?"
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "challenger",
@@ -32,10 +83,23 @@
       "year": 2011,
       "core_idea": "Top sellers teach the customer something new about their own business, tailor it to them, and gently take control of the next step.",
       "principles": [
-        {"stage": "value", "rule": "Offer one useful insight the customer had not considered, before the product.", "on_our_call": "Point out, gently, that typing errors cause rejections and repeat visits, which quietly costs the centre customers."},
-        {"stage": "value", "rule": "Tailor the message to the type of business you are talking to.", "on_our_call": "Computer centre → form-filling time. Shop or clinic → customers asking the same questions again and again."},
-        {"stage": "close", "rule": "Take control of the next step confidently, without being aggressive.", "on_our_call": "Suggest a specific demo time instead of asking 'shall we talk sometime?'"}
-      ]
+        {
+          "stage": "value",
+          "rule": "Offer one useful insight the customer had not considered, before the product.",
+          "on_our_call": "Point out, gently, that typing errors cause rejections and repeat visits, which quietly costs the centre customers."
+        },
+        {
+          "stage": "value",
+          "rule": "Tailor the message to the type of business you are talking to.",
+          "on_our_call": "Computer centre → form-filling time. Shop or clinic → customers asking the same questions again and again."
+        },
+        {
+          "stage": "close",
+          "rule": "Take control of the next step confidently, without being aggressive.",
+          "on_our_call": "Suggest a specific demo time instead of asking 'shall we talk sometime?'"
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "voss",
@@ -44,12 +108,37 @@
       "year": 2016,
       "core_idea": "Tactical empathy: label emotions, mirror words, ask calibrated 'how/what' questions, and make 'no' feel safe.",
       "principles": [
-        {"stage": "objection", "rule": "Label the feeling before answering: 'It sounds like…'", "on_our_call": "If they sound busy or doubtful, name it calmly first.", "example_en": "It sounds like you get a lot of these calls.", "example_kn": "ನಿಮಗ ಇಂಥಾ ಕಾಲ್ ಭಾಳ ಬರ್ತಾವ ಅನ್ನಿಸ್ತದರೀ."},
-        {"stage": "discovery", "rule": "Mirror: repeat their last few words as a question so they say more.", "on_our_call": "Customer: 'Season time is too much rush.' Agent: 'Too much rush?'"},
-        {"stage": "discovery", "rule": "Ask calibrated questions starting with 'what' or 'how', not 'why' (which sounds accusing).", "on_our_call": "'How do you handle the rush now?' instead of 'Why don't you use software?'"},
-        {"stage": "opening", "rule": "Questions that invite a 'no' feel safe and lower defences.", "on_our_call": "'Is it a bad time to talk for two minutes?' A 'no' means they are willing to listen.", "example_en": "Is now a bad time for two minutes?", "example_kn": "ಈಗ ಎರಡು ನಿಮಿಷ ಮಾತಾಡಾಕ ತೊಂದರೆ ಆಗ್ತದೇನ್ರೀ?"},
-        {"stage": "mindset", "rule": "Use a slow, calm, warm 'late-night radio' voice: it signals control and safety.", "on_our_call": "Short sentences, unhurried pace, never talk over the customer."}
-      ]
+        {
+          "stage": "objection",
+          "rule": "Label the feeling before answering: 'It sounds like…'",
+          "on_our_call": "If they sound busy or doubtful, name it calmly first.",
+          "example_en": "It sounds like you get a lot of these calls.",
+          "example_kn": "ನಿಮಗ ಇಂಥಾ ಕಾಲ್ ಭಾಳ ಬರ್ತಾವ ಅನ್ನಿಸ್ತದರೀ."
+        },
+        {
+          "stage": "discovery",
+          "rule": "Mirror: repeat their last few words as a question so they say more.",
+          "on_our_call": "Customer: 'Season time is too much rush.' Agent: 'Too much rush?'"
+        },
+        {
+          "stage": "discovery",
+          "rule": "Ask calibrated questions starting with 'what' or 'how', not 'why' (which sounds accusing).",
+          "on_our_call": "'How do you handle the rush now?' instead of 'Why don't you use software?'"
+        },
+        {
+          "stage": "opening",
+          "rule": "Questions that invite a 'no' feel safe and lower defences.",
+          "on_our_call": "'Is it a bad time to talk for two minutes?' A 'no' means they are willing to listen.",
+          "example_en": "Is now a bad time for two minutes?",
+          "example_kn": "ಈಗ ಎರಡು ನಿಮಿಷ ಮಾತಾಡಾಕ ತೊಂದರೆ ಆಗ್ತದೇನ್ರೀ?"
+        },
+        {
+          "stage": "mindset",
+          "rule": "Use a slow, calm, warm 'late-night radio' voice: it signals control and safety.",
+          "on_our_call": "Short sentences, unhurried pace, never talk over the customer."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "carnegie",
@@ -58,11 +147,28 @@
       "year": 1936,
       "core_idea": "People respond to genuine interest, respect, their own name, and talking about what they care about.",
       "principles": [
-        {"stage": "opening", "rule": "Use the person's name and the name of their business.", "on_our_call": "Greet them by the centre's name from the lead list, if known."},
-        {"stage": "discovery", "rule": "Be genuinely interested; let them talk about their work.", "on_our_call": "Ask how long the centre has been running and what they are known for."},
-        {"stage": "objection", "rule": "Never argue or tell someone they are wrong; you cannot win an argument.", "on_our_call": "If they disagree, agree with the part that is true and ask a question."},
-        {"stage": "mindset", "rule": "Talk in terms of the other person's interests, not yours.", "on_our_call": "Say 'your customers' and 'your staff', not 'our software'."}
-      ]
+        {
+          "stage": "opening",
+          "rule": "Use the person's name and the name of their business.",
+          "on_our_call": "Greet them by the centre's name from the lead list, if known."
+        },
+        {
+          "stage": "discovery",
+          "rule": "Be genuinely interested; let them talk about their work.",
+          "on_our_call": "Ask how long the centre has been running and what they are known for."
+        },
+        {
+          "stage": "objection",
+          "rule": "Never argue or tell someone they are wrong; you cannot win an argument.",
+          "on_our_call": "If they disagree, agree with the part that is true and ask a question."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Talk in terms of the other person's interests, not yours.",
+          "on_our_call": "Say 'your customers' and 'your staff', not 'our software'."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "cialdini",
@@ -71,11 +177,28 @@
       "year": 1984,
       "core_idea": "Six principles shape decisions: reciprocity, commitment, social proof, authority, liking, scarcity. We use them only honestly.",
       "principles": [
-        {"stage": "value", "rule": "Reciprocity: give something useful first.", "on_our_call": "Share one practical tip about reducing form errors, even if they say no."},
-        {"stage": "close", "rule": "Commitment: a small yes leads to a bigger yes.", "on_our_call": "Ask for a 15-minute demo, not a purchase."},
-        {"stage": "value", "rule": "Social proof works only when it is true.", "on_our_call": "Mention other centres ONLY if knowledge_base.json lists real customers. Never invent them."},
-        {"stage": "mindset", "rule": "Liking: people say yes to people who are similar, warm and respectful.", "on_our_call": "Local Dharwad/Hubballi Kannada, friendly, unhurried."}
-      ]
+        {
+          "stage": "value",
+          "rule": "Reciprocity: give something useful first.",
+          "on_our_call": "Share one practical tip about reducing form errors, even if they say no."
+        },
+        {
+          "stage": "close",
+          "rule": "Commitment: a small yes leads to a bigger yes.",
+          "on_our_call": "Ask for a 15-minute demo, not a purchase."
+        },
+        {
+          "stage": "value",
+          "rule": "Social proof works only when it is true.",
+          "on_our_call": "Mention other centres ONLY if knowledge_base.json lists real customers. Never invent them."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Liking: people say yes to people who are similar, warm and respectful.",
+          "on_our_call": "Local Dharwad/Hubballi Kannada, friendly, unhurried."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "pink",
@@ -84,10 +207,23 @@
       "year": 2012,
       "core_idea": "Modern selling is about attunement (seeing their view), buoyancy (staying positive after 'no'), and clarity (finding the real problem).",
       "principles": [
-        {"stage": "discovery", "rule": "Attunement: understand their perspective before your own goal.", "on_our_call": "Picture a busy centre owner with customers waiting while answering the phone."},
-        {"stage": "follow_up", "rule": "Buoyancy: a 'no' is about timing or fit, not about you.", "on_our_call": "Thank them sincerely, end politely, never sound disappointed."},
-        {"stage": "value", "rule": "Clarity: help them see a problem they did not know they had.", "on_our_call": "Ask about customers who leave because of the queue."}
-      ]
+        {
+          "stage": "discovery",
+          "rule": "Attunement: understand their perspective before your own goal.",
+          "on_our_call": "Picture a busy centre owner with customers waiting while answering the phone."
+        },
+        {
+          "stage": "follow_up",
+          "rule": "Buoyancy: a 'no' is about timing or fit, not about you.",
+          "on_our_call": "Thank them sincerely, end politely, never sound disappointed."
+        },
+        {
+          "stage": "value",
+          "rule": "Clarity: help them see a problem they did not know they had.",
+          "on_our_call": "Ask about customers who leave because of the queue."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "tracy",
@@ -96,9 +232,18 @@
       "year": 1985,
       "core_idea": "The customer buys the result, not the product. Belief in your offer and good preparation drive results.",
       "principles": [
-        {"stage": "value", "rule": "Sell the result, not the features.", "on_our_call": "Say 'fewer rejected forms and a shorter queue', not 'an automation tool'."},
-        {"stage": "mindset", "rule": "Prepare before each call.", "on_our_call": "Read the lead's business type and history before speaking."}
-      ]
+        {
+          "stage": "value",
+          "rule": "Sell the result, not the features.",
+          "on_our_call": "Say 'fewer rejected forms and a shorter queue', not 'an automation tool'."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Prepare before each call.",
+          "on_our_call": "Read the lead's business type and history before speaking."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "gap",
@@ -107,10 +252,23 @@
       "year": 2018,
       "core_idea": "Find the gap between the customer's current state and the future state they want. The bigger the gap, the more value.",
       "principles": [
-        {"stage": "discovery", "rule": "Understand the current state in detail: what happens now, and what it costs.", "on_our_call": "How many forms a day, how many staff, what happens on a mistake."},
-        {"stage": "value", "rule": "Ask what their ideal future looks like, then connect the product to that gap.", "on_our_call": "'What would a perfect season look like for you?'"},
-        {"stage": "objection", "rule": "If there is no real gap, there is no sale, and that is fine.", "on_our_call": "If they have no problem, thank them and end politely."}
-      ]
+        {
+          "stage": "discovery",
+          "rule": "Understand the current state in detail: what happens now, and what it costs.",
+          "on_our_call": "How many forms a day, how many staff, what happens on a mistake."
+        },
+        {
+          "stage": "value",
+          "rule": "Ask what their ideal future looks like, then connect the product to that gap.",
+          "on_our_call": "'What would a perfect season look like for you?'"
+        },
+        {
+          "stage": "objection",
+          "rule": "If there is no real gap, there is no sale, and that is fine.",
+          "on_our_call": "If they have no problem, thank them and end politely."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "fanatical",
@@ -119,9 +277,18 @@
       "year": 2015,
       "core_idea": "A pipeline needs steady, disciplined outreach and a short, clear phone opener.",
       "principles": [
-        {"stage": "opening", "rule": "Use a short, clear opener: who you are, why you are calling, and a bridge to a question.", "on_our_call": "AI disclosure → SourceCode Studio, Dharwad → one-line reason → one question."},
-        {"stage": "follow_up", "rule": "Follow up consistently, but within limits.", "on_our_call": "Max 3 attempts per lead, never twice within 24 hours; opt-outs are permanent."}
-      ]
+        {
+          "stage": "opening",
+          "rule": "Use a short, clear opener: who you are, why you are calling, and a bridge to a question.",
+          "on_our_call": "AI disclosure → SourceCode Studio, Dharwad → one-line reason → one question."
+        },
+        {
+          "stage": "follow_up",
+          "rule": "Follow up consistently, but within limits.",
+          "on_our_call": "Max 3 attempts per lead, never twice within 24 hours; opt-outs are permanent."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "objections",
@@ -130,9 +297,18 @@
       "year": 2018,
       "core_idea": "Objections are normal. Pause, acknowledge, clarify, then respond briefly and ask again.",
       "principles": [
-        {"stage": "objection", "rule": "Pause and acknowledge before responding; never rush in with an answer.", "on_our_call": "A short calm acknowledgement, then a clarifying question."},
-        {"stage": "objection", "rule": "Brush-offs at the start ('not interested') are reflexes, not real objections.", "on_our_call": "Acknowledge once and ask one easy question. If they repeat no, respect it."}
-      ]
+        {
+          "stage": "objection",
+          "rule": "Pause and acknowledge before responding; never rush in with an answer.",
+          "on_our_call": "A short calm acknowledgement, then a clarifying question."
+        },
+        {
+          "stage": "objection",
+          "rule": "Brush-offs at the start ('not interested') are reflexes, not real objections.",
+          "on_our_call": "Acknowledge once and ask one easy question. If they repeat no, respect it."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "gitomer",
@@ -141,9 +317,18 @@
       "year": 2004,
       "core_idea": "People love to buy but hate to be sold. Build relationships and give value first.",
       "principles": [
-        {"stage": "mindset", "rule": "People love to buy but hate to be sold.", "on_our_call": "No hard push. Help them decide, not pressure them."},
-        {"stage": "value", "rule": "Give value first; questions should make them think.", "on_our_call": "Ask one question that makes the owner think about lost time."}
-      ]
+        {
+          "stage": "mindset",
+          "rule": "People love to buy but hate to be sold.",
+          "on_our_call": "No hard push. Help them decide, not pressure them."
+        },
+        {
+          "stage": "value",
+          "rule": "Give value first; questions should make them think.",
+          "on_our_call": "Ask one question that makes the owner think about lost time."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "sandler",
@@ -152,9 +337,19 @@
       "year": 1995,
       "core_idea": "Set an up-front agreement for the conversation, qualify honestly, and make it fine for the customer to say no.",
       "principles": [
-        {"stage": "opening", "rule": "Up-front contract: agree on the time and purpose of the call, and that 'no' is okay.", "on_our_call": "'Two minutes; if it is not useful, just tell me and I will not call again.'", "example_kn": "ಎರಡೇ ನಿಮಿಷರೀ. ಉಪಯೋಗ ಇಲ್ಲ ಅನ್ನಿಸಿದ್ರ ಹೇಳ್ರಿ, ಮತ್ತ ಕಾಲ್ ಮಾಡಂಗಿಲ್ಲ."},
-        {"stage": "discovery", "rule": "Find the pain behind the surface problem.", "on_our_call": "'Long queues' → 'customers leaving' → 'lost income in peak season'."}
-      ]
+        {
+          "stage": "opening",
+          "rule": "Up-front contract: agree on the time and purpose of the call, and that 'no' is okay.",
+          "on_our_call": "'Two minutes; if it is not useful, just tell me and I will not call again.'",
+          "example_kn": "ಎರಡೇ ನಿಮಿಷರೀ. ಉಪಯೋಗ ಇಲ್ಲ ಅನ್ನಿಸಿದ್ರ ಹೇಳ್ರಿ, ಮತ್ತ ಕಾಲ್ ಮಾಡಂಗಿಲ್ಲ."
+        },
+        {
+          "stage": "discovery",
+          "rule": "Find the pain behind the surface problem.",
+          "on_our_call": "'Long queues' → 'customers leaving' → 'lost income in peak season'."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "mom_test",
@@ -163,9 +358,18 @@
       "year": 2013,
       "core_idea": "Ask about their real past behaviour, not hypothetical opinions; compliments and 'maybe later' are not data.",
       "principles": [
-        {"stage": "discovery", "rule": "Ask about the last time it happened, not 'would you use…'.", "on_our_call": "'Last season, how many forms did you fill in a day?'"},
-        {"stage": "follow_up", "rule": "Polite interest is not a commitment; only a scheduled next step counts.", "on_our_call": "Record 'interested' only if they agree a demo time or callback time."}
-      ]
+        {
+          "stage": "discovery",
+          "rule": "Ask about the last time it happened, not 'would you use…'.",
+          "on_our_call": "'Last season, how many forms did you fill in a day?'"
+        },
+        {
+          "stage": "follow_up",
+          "rule": "Polite interest is not a commitment; only a scheduled next step counts.",
+          "on_our_call": "Record 'interested' only if they agree a demo time or callback time."
+        }
+      ],
+      "region": "european"
     },
     {
       "id": "ziglar",
@@ -174,9 +378,19 @@
       "year": 1984,
       "core_idea": "Closing is the natural end of helping someone. Ask clearly, then be quiet and listen.",
       "principles": [
-        {"stage": "close", "rule": "Ask for the next step clearly, then stay silent and let them answer.", "on_our_call": "After the demo invitation, wait. Do not fill the silence."},
-        {"stage": "close", "rule": "Offer a choice between two easy options.", "on_our_call": "'Would a visit at your centre or a short video call suit you better?'", "example_kn": "ನಿಮ್ ಸೆಂಟರ್‌ಗೆ ಬಂದು ತೋರಿಸ್ಲೇನು, ಅಥವಾ ವಿಡಿಯೋ ಕಾಲ್‌ನಾಗ ತೋರಿಸ್ಲೇನ್ರೀ?"}
-      ]
+        {
+          "stage": "close",
+          "rule": "Ask for the next step clearly, then stay silent and let them answer.",
+          "on_our_call": "After the demo invitation, wait. Do not fill the silence."
+        },
+        {
+          "stage": "close",
+          "rule": "Offer a choice between two easy options.",
+          "on_our_call": "'Would a visit at your centre or a short video call suit you better?'",
+          "example_kn": "ನಿಮ್ ಸೆಂಟರ್‌ಗೆ ಬಂದು ತೋರಿಸ್ಲೇನು, ಅಥವಾ ವಿಡಿಯೋ ಕಾಲ್‌ನಾಗ ತೋರಿಸ್ಲೇನ್ರೀ?"
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "customer_centric",
@@ -185,9 +399,18 @@
       "year": 2003,
       "core_idea": "Talk about how the customer would use the offering to reach their goal, not about features.",
       "principles": [
-        {"stage": "value", "rule": "Describe a usage scenario in their world.", "on_our_call": "'A student gives you the documents, your staff checks them, and the form is filled in a few minutes.'"},
-        {"stage": "value", "rule": "Avoid jargon; use the customer's own words.", "on_our_call": "No 'AI pipeline' or 'automation workflow'; say 'forms get filled faster'."}
-      ]
+        {
+          "stage": "value",
+          "rule": "Describe a usage scenario in their world.",
+          "on_our_call": "'A student gives you the documents, your staff checks them, and the form is filled in a few minutes.'"
+        },
+        {
+          "stage": "value",
+          "rule": "Avoid jargon; use the customer's own words.",
+          "on_our_call": "No 'AI pipeline' or 'automation workflow'; say 'forms get filled faster'."
+        }
+      ],
+      "region": "american"
     },
     {
       "id": "mandino",
@@ -196,7 +419,375 @@
       "year": 1968,
       "core_idea": "Persistence, habits and genuine goodwill toward every person you meet.",
       "principles": [
-        {"stage": "mindset", "rule": "Greet every person with genuine goodwill.", "on_our_call": "Same warmth on the 50th call as the first; never sound tired or scripted."}
+        {
+          "stage": "mindset",
+          "rule": "Greet every person with genuine goodwill.",
+          "on_our_call": "Same warmth on the 50th call as the first; never sound tired or scripted."
+        }
+      ],
+      "region": "american"
+    },
+    {
+      "id": "corporate_chanakya",
+      "region": "indian",
+      "title": "Corporate Chanakya",
+      "author": "Radhakrishnan Pillai",
+      "year": 2010,
+      "core_idea": "Lessons from Kautilya's Arthashastra for modern business: preparation, wise counsel, and of the four classic methods (saam, daam, dand, bhed) we use only saam: persuasion through good advice.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Persuade through sound advice and reasoning (saam), never through pressure or division.",
+          "on_our_call": "Act like a trusted advisor to the owner: explain, never threaten or create fear."
+        },
+        {
+          "stage": "discovery",
+          "rule": "A good advisor first studies the situation of the one being advised.",
+          "on_our_call": "Learn the centre's season, staff and customers before recommending anything."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Plan before acting; a well-prepared person wins more often.",
+          "on_our_call": "Read the lead details and pick the most likely product before dialling."
+        }
+      ]
+    },
+    {
+      "id": "bottom_pyramid",
+      "region": "indian",
+      "title": "The Fortune at the Bottom of the Pyramid",
+      "author": "C. K. Prahalad",
+      "year": 2004,
+      "core_idea": "Small and price-sensitive customers are a huge market when the offer is affordable, low-risk, easy to access and respects them.",
+      "principles": [
+        {
+          "stage": "value",
+          "rule": "Value-conscious buyers need low risk and a small first step.",
+          "on_our_call": "Stress that the demo is free and there is no commitment; Chetan explains payment options at the demo."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Small businesses are serious, smart customers who deserve respect, not a 'cheap' pitch.",
+          "on_our_call": "Never talk down to a small centre; treat every owner like a valued client."
+        }
+      ]
+    },
+    {
+      "id": "jugaad",
+      "region": "indian",
+      "title": "Jugaad Innovation",
+      "author": "Navi Radjou, Jaideep Prabhu & Simone Ahuja",
+      "year": 2012,
+      "core_idea": "Frugal, flexible, simple solutions that do more with less win in Indian markets.",
+      "principles": [
+        {
+          "stage": "value",
+          "rule": "Keep the solution simple and practical; people trust what they can picture using tomorrow.",
+          "on_our_call": "Describe one simple use from their day, not a long list of features."
+        },
+        {
+          "stage": "discovery",
+          "rule": "Understand how they already 'manage somehow' today; that workaround shows the real need.",
+          "on_our_call": "Ask how they handle the rush now, and listen for the workaround.",
+          "example_en": "How do you manage it now when the rush comes?",
+          "example_kn": "ರಶ್ ಬಂದಾಗ ಈಗ ಹೆಂಗ ಮ್ಯಾನೇಜ್ ಮಾಡ್ತೀರ್ರೀ?"
+        }
+      ]
+    },
+    {
+      "id": "you_can_win",
+      "region": "indian",
+      "title": "You Can Win",
+      "author": "Shiv Khera",
+      "year": 1998,
+      "core_idea": "Attitude, persistence and character decide success; winners do ordinary things in a better way.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "A positive attitude is a choice made on every call.",
+          "on_our_call": "Stay warm and positive after every 'no'; the next call starts fresh."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Character and honesty build long-term success.",
+          "on_our_call": "Never stretch the truth to win a demo."
+        }
+      ]
+    },
+    {
+      "id": "it_happened_in_india",
+      "region": "indian",
+      "title": "It Happened in India",
+      "author": "Kishore Biyani with Dipayan Baishya",
+      "year": 2007,
+      "core_idea": "The story of Big Bazaar: Indian customers buy where they feel at home, so design for how they actually live and shop, not for foreign ideas.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Customers trust what feels familiar.",
+          "on_our_call": "Speak the local Dharwad/Hubballi way and use examples from their daily work, not English jargon."
+        },
+        {
+          "stage": "objection",
+          "rule": "Buying decisions are often made together with family or partners.",
+          "on_our_call": "If they want to ask family or a partner, welcome it and invite that person to the demo."
+        }
+      ]
+    },
+    {
+      "id": "stay_hungry",
+      "region": "indian",
+      "title": "Stay Hungry Stay Foolish",
+      "author": "Rashmi Bansal",
+      "year": 2008,
+      "core_idea": "Stories of Indian entrepreneurs who started small, stayed close to customers and grew step by step.",
+      "principles": [
+        {
+          "stage": "discovery",
+          "rule": "Owners are proud of how they built their business; respect the journey.",
+          "on_our_call": "Ask how they started the centre and listen with genuine interest.",
+          "example_en": "How did you start this centre?",
+          "example_kn": "ಈ ಸೆಂಟರ್ ಹೆಂಗ ಶುರು ಮಾಡಿದ್ರೀ?"
+        }
+      ]
+    },
+    {
+      "id": "art_of_war",
+      "region": "chinese",
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "year": -500,
+      "core_idea": "Victory comes from knowing yourself and the other side, preparing well, and winning without fighting.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Know the other side and know yourself.",
+          "on_our_call": "Know the customer's business type and know exactly what our products can and cannot do (knowledge_base.json)."
+        },
+        {
+          "stage": "objection",
+          "rule": "The best victory is won without a fight.",
+          "on_our_call": "Never argue with a customer; agree with what is true and ask a question."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Battles are decided before they begin, by preparation.",
+          "on_our_call": "Prepare the opener and the likely product before the call."
+        }
+      ]
+    },
+    {
+      "id": "analects",
+      "region": "chinese",
+      "title": "The Analects",
+      "author": "Confucius (compiled by his students)",
+      "year": -400,
+      "core_idea": "Trust (xin), sincerity and respect are the foundation of every relationship; be careful in words and generous in action.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "A person without trustworthiness cannot be relied on.",
+          "on_our_call": "Make only promises the knowledge base supports; say 'Chetan will confirm' when unsure."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Do not do to others what you would not want done to you.",
+          "on_our_call": "Call the way you would want to be called: polite, brief, easy to decline."
+        },
+        {
+          "stage": "value",
+          "rule": "Be modest in speech and strong in action: promise less, deliver more.",
+          "on_our_call": "Under-promise on the call; let the demo show the value."
+        }
+      ]
+    },
+    {
+      "id": "tao_te_ching",
+      "region": "chinese",
+      "title": "Tao Te Ching",
+      "author": "Laozi",
+      "year": -400,
+      "core_idea": "Softness overcomes hardness, like water wearing down stone; calm, humble action wins without force.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "The soft and gentle overcome the hard and rigid.",
+          "on_our_call": "When the customer is rough or impatient, become softer and slower, never sharper."
+        },
+        {
+          "stage": "close",
+          "rule": "Act without forcing.",
+          "on_our_call": "Offer the demo once clearly; if they hesitate, leave the door open instead of pushing."
+        }
+      ]
+    },
+    {
+      "id": "huawei",
+      "region": "chinese",
+      "title": "Huawei: Leadership, Culture and Connectivity",
+      "author": "Tian Tao, David De Cremer & Wu Chunbo",
+      "year": 2016,
+      "core_idea": "Huawei's culture puts customers at the centre: their success is the reason the company exists.",
+      "principles": [
+        {
+          "stage": "value",
+          "rule": "Customer-centricity: focus on the customer's success, not on your product.",
+          "on_our_call": "Frame everything as 'more customers served, fewer mistakes for you'."
+        }
+      ]
+    },
+    {
+      "id": "alibaba",
+      "region": "chinese",
+      "title": "Alibaba: The House That Jack Ma Built",
+      "author": "Duncan Clark",
+      "year": 2016,
+      "core_idea": "Alibaba grew by helping small businesses sell online, with a 'customers first' philosophy.",
+      "principles": [
+        {
+          "stage": "value",
+          "rule": "Small businesses grow when they can be found and reached online.",
+          "on_our_call": "For shops and small businesses, talk about new customers finding them online (AI Website Agent)."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Customers first.",
+          "on_our_call": "The customer's time and needs come before our script."
+        }
+      ]
+    },
+    {
+      "id": "rhetoric",
+      "region": "european",
+      "title": "Rhetoric",
+      "author": "Aristotle",
+      "year": -350,
+      "core_idea": "Persuasion rests on ethos (credibility), pathos (feelings) and logos (reason).",
+      "principles": [
+        {
+          "stage": "opening",
+          "rule": "Ethos: credibility first.",
+          "on_our_call": "Clearly say who is calling: an AI assistant for SourceCode Studio, Dharwad."
+        },
+        {
+          "stage": "value",
+          "rule": "Pathos and logos together: connect the feeling (stress of the rush) with a clear reason (forms done faster).",
+          "on_our_call": "Name the stress they described, then give one clear benefit."
+        }
+      ]
+    },
+    {
+      "id": "value_prop_design",
+      "region": "european",
+      "title": "Value Proposition Design",
+      "author": "Alexander Osterwalder, Yves Pigneur et al.",
+      "year": 2014,
+      "core_idea": "Map the customer's jobs, pains and gains, then show how your offer relieves the pains and creates the gains.",
+      "principles": [
+        {
+          "stage": "discovery",
+          "rule": "Find their jobs (what they must get done), pains and hoped-for gains.",
+          "on_our_call": "Job: filling forms. Pain: rush and mistakes. Gain: more customers served."
+        },
+        {
+          "stage": "value",
+          "rule": "Recommend only what fits their biggest pain.",
+          "on_our_call": "Pick ONE product that matches the pain they named."
+        }
+      ]
+    },
+    {
+      "id": "blue_ocean",
+      "region": "european",
+      "title": "Blue Ocean Strategy",
+      "author": "W. Chan Kim & Renée Mauborgne",
+      "year": 2005,
+      "core_idea": "Instead of fighting competitors on price, create new value that makes the competition less relevant.",
+      "principles": [
+        {
+          "stage": "value",
+          "rule": "Don't compete on price; show different value.",
+          "on_our_call": "Never compare with or criticise other vendors; talk about the new value for them."
+        }
+      ]
+    },
+    {
+      "id": "alchemy",
+      "region": "european",
+      "title": "Alchemy",
+      "author": "Rory Sutherland",
+      "year": 2019,
+      "core_idea": "Human decisions are psychological, not purely logical; reducing perceived risk and reframing can matter more than features.",
+      "principles": [
+        {
+          "stage": "close",
+          "rule": "Reduce the perceived risk of saying yes.",
+          "on_our_call": "Make the next step feel small: a free, short demo, no commitment."
+        },
+        {
+          "stage": "value",
+          "rule": "How you frame something changes its value.",
+          "on_our_call": "'Fifteen minutes to see if it saves you hours' instead of 'a product presentation'."
+        }
+      ]
+    },
+    {
+      "id": "luxury_strategy",
+      "region": "european",
+      "title": "The Luxury Strategy",
+      "author": "Jean-Noël Kapferer & Vincent Bastien",
+      "year": 2009,
+      "core_idea": "Premium brands don't chase or discount; they educate, give a special experience and let the client choose.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Never chase and never discount to win a yes.",
+          "on_our_call": "Calm confidence like a premium boutique; no discounts on the call."
+        },
+        {
+          "stage": "value",
+          "rule": "Educate the client instead of selling at them.",
+          "on_our_call": "Share one useful insight about their work, then let them decide."
+        }
+      ]
+    },
+    {
+      "id": "exactly_what_to_say",
+      "region": "european",
+      "title": "Exactly What to Say",
+      "author": "Phil M. Jones",
+      "year": 2017,
+      "core_idea": "Small word choices ('I'm not sure if it's for you, but…', 'How open are you to…') lower resistance and open conversations.",
+      "principles": [
+        {
+          "stage": "opening",
+          "rule": "'I'm not sure if this is for you, but…' removes pressure and creates curiosity.",
+          "on_our_call": "Use it before the one-line reason for the call.",
+          "example_en": "I'm not sure if this is for you, but may I ask one question?",
+          "example_kn": "ನಿಮಗ ಇದು ಉಪಯೋಗ ಆಗ್ತದೋ ಗೊತ್ತಿಲ್ಲರೀ, ಆದ್ರ ಒಂದು ಪ್ರಶ್ನೆ ಕೇಳ್ಲೇನು?"
+        },
+        {
+          "stage": "close",
+          "rule": "'How open are you to…' invites a thoughtful answer instead of a quick no.",
+          "on_our_call": "Use it to invite the demo.",
+          "example_en": "How open would you be to a short free demo?",
+          "example_kn": "ಒಂದು ಸಣ್ಣ ಫ್ರೀ ಡೆಮೋ ನೋಡಾಕ ನೀವು ರೆಡಿ ಇದ್ದೀರೇನ್ರೀ?"
+        }
+      ]
+    },
+    {
+      "id": "go_giver",
+      "region": "american",
+      "title": "The Go-Giver",
+      "author": "Bob Burg & John David Mann",
+      "year": 2007,
+      "core_idea": "Give more value than you take; put the other person's interests first and success follows.",
+      "principles": [
+        {
+          "stage": "follow_up",
+          "rule": "Give value even when there is no sale.",
+          "on_our_call": "End even a 'no' with one useful tip or a sincere thank-you."
+        }
       ]
     }
   ],
@@ -206,7 +797,11 @@
       "objection_en": "Not interested.",
       "objection_kn": "ಬ್ಯಾಡ್ರಿ, ಇಂಟರೆಸ್ಟ್ ಇಲ್ಲ.",
       "approach": "Usually a reflex. Acknowledge, make no feel safe, ask one easy question. If they repeat it, respect it and end warmly.",
-      "books": ["objections", "voss", "sandler"],
+      "books": [
+        "objections",
+        "voss",
+        "sandler"
+      ],
       "response_en": "That's completely fine. May I ask one thing before I go: do forms take a lot of your staff's time during the season?",
       "response_kn": "ಆಗ್ಲಿರೀ, ಪರವಾಗಿಲ್ಲ. ಒಂದೇ ಪ್ರಶ್ನೆ: ಸೀಸನ್‌ನಾಗ ಫಾರ್ಮ್ ತುಂಬೋದ್ರಾಗ ನಿಮ್ ಸ್ಟಾಫ್‌ದು ಭಾಳ ಟೈಮ್ ಹೋಗ್ತದೇನ್ರೀ?"
     },
@@ -215,7 +810,11 @@
       "objection_en": "How much does it cost?",
       "objection_kn": "ಎಷ್ಟು ಆಗ್ತದ ರೇಟು?",
       "approach": "Value before price. Speak a price ONLY if price_approved is true in knowledge_base.json. Otherwise say it depends on their volume and Chetan will share it at the demo.",
-      "books": ["tracy", "gap", "spin"],
+      "books": [
+        "tracy",
+        "gap",
+        "spin"
+      ],
       "response_en": "It depends on how many forms you do. Chetan will show you exactly at the free demo. Roughly how many forms do you fill on a busy day?",
       "response_kn": "ಅದು ನೀವು ಎಷ್ಟು ಫಾರ್ಮ್ ಮಾಡ್ತೀರಿ ಅನ್ನೋದರ ಮ್ಯಾಲ ಅದರೀ. ಫ್ರೀ ಡೆಮೋದಾಗ ಚೇತನ್ ಸರಿಯಾಗಿ ಹೇಳ್ತಾರ. ರಶ್ ದಿನ ಸುಮಾರು ಎಷ್ಟು ಫಾರ್ಮ್ ಆಗ್ತಾವರೀ?"
     },
@@ -224,7 +823,11 @@
       "objection_en": "That sounds expensive.",
       "objection_kn": "ಭಾಳ ದುಬಾರಿ ಆಗ್ತದ.",
       "approach": "Label the concern, compare to the cost of the problem (lost customers, repeat work), never discount or argue.",
-      "books": ["voss", "gap", "carnegie"],
+      "books": [
+        "voss",
+        "gap",
+        "carnegie"
+      ],
       "response_en": "It sounds like budget matters a lot right now, which makes sense. How much time do mistakes and repeat visits cost you in a season?",
       "response_kn": "ಬಜೆಟ್ ಮುಖ್ಯ ಅನ್ನೋದು ಸರಿನರೀ. ಸೀಸನ್‌ನಾಗ ತಪ್ಪು ಆಗಿ ಮತ್ತ ಮಾಡೋ ಕೆಲಸಕ್ಕ ಎಷ್ಟು ಟೈಮ್ ಹೋಗ್ತದರೀ?"
     },
@@ -233,7 +836,11 @@
       "objection_en": "We already manage fine / already have someone.",
       "objection_kn": "ನಮ್ದು ಈಗ ಹೆಂಗೋ ನಡೀತದ.",
       "approach": "Respect it. Ask what works well and what would make it even better. If there is no gap, end politely.",
-      "books": ["gap", "carnegie", "spin"],
+      "books": [
+        "gap",
+        "carnegie",
+        "spin"
+      ],
       "response_en": "Good to hear it's working. What's the one part you'd still like to be faster?",
       "response_kn": "ಛಲೋ ನಡೀತದ ಅಂದ್ರ ಖುಷಿರೀ. ಇನ್ನೂ ಸ್ವಲ್ಪ ಫಾಸ್ಟ್ ಆಗ್ಬೇಕು ಅನ್ನೋ ಕೆಲಸ ಯಾವದರ ಅದೇನ್ರೀ?"
     },
@@ -242,7 +849,10 @@
       "objection_en": "I'm busy right now.",
       "objection_kn": "ಈಗ ಬಿಜಿ ಅದೀನ್ರೀ.",
       "approach": "Apologise briefly, offer a specific callback time, record it. Never keep talking.",
-      "books": ["voss", "fanatical"],
+      "books": [
+        "voss",
+        "fanatical"
+      ],
       "response_en": "Sorry to disturb you. Would this evening or tomorrow morning be better for two minutes?",
       "response_kn": "ತೊಂದರೆ ಕೊಟ್ಟಿದ್ದಕ್ಕ ಕ್ಷಮಿಸ್ರಿ. ಇವತ್ತು ಸಂಜಿ ಅಥವಾ ನಾಳೆ ಮುಂಜಾನೆ, ಯಾವಾಗ ಎರಡು ನಿಮಿಷ ಆಗ್ತದರೀ?"
     },
@@ -251,7 +861,10 @@
       "objection_en": "Just send details on WhatsApp.",
       "objection_kn": "ವಾಟ್ಸಾಪ್‌ಗೆ ಡೀಟೇಲ್ಸ್ ಕಳಿಸ್ರಿ.",
       "approach": "Agree (WhatsApp follow-up is Phase 4; until then, record it as a handover for Chetan). Ask one question so the message is relevant.",
-      "books": ["mom_test", "challenger"],
+      "books": [
+        "mom_test",
+        "challenger"
+      ],
       "response_en": "Sure. So Chetan sends the right thing, is it mainly form-filling or a website you'd want to see?",
       "response_kn": "ಆಗ್ಲಿರೀ. ಚೇತನ್ ಸರಿಯಾದ ಡೀಟೇಲ್ಸ್ ಕಳಿಸ್ಲಿ ಅಂತ ಕೇಳ್ತೀನಿ: ನಿಮಗ ಫಾರ್ಮ್ ತುಂಬೋದು ಬೇಕೋ, ವೆಬ್‌ಸೈಟ್ ಬೇಕೋ?"
     },
@@ -260,7 +873,10 @@
       "objection_en": "Are you a robot / a real person?",
       "objection_kn": "ನೀವು ಮನುಷ್ಯರೋ ಮಷೀನೋ?",
       "approach": "Always answer honestly: it is an AI assistant for SourceCode Studio. Offer a human (Chetan) callback.",
-      "books": ["carnegie", "sandler"],
+      "books": [
+        "carnegie",
+        "sandler"
+      ],
       "response_en": "I'm an AI assistant calling for SourceCode Studio. If you prefer, Chetan himself can call you back.",
       "response_kn": "ನಾನು ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋದ AI ಅಸಿಸ್ಟೆಂಟ್ ರೀ. ಬೇಕಂದ್ರ ಚೇತನ್ ಅವರೇ ನಿಮಗ ಕಾಲ್ ಮಾಡ್ತಾರ."
     },
@@ -269,17 +885,87 @@
       "objection_en": "Don't call me again.",
       "objection_kn": "ಮತ್ತ ಕಾಲ್ ಮಾಡಬ್ಯಾಡ್ರಿ.",
       "approach": "No persuasion at all. Confirm, record a permanent opt-out, apologise, end the call.",
-      "books": ["sandler"],
+      "books": [
+        "sandler"
+      ],
       "response_en": "Understood, we won't call again. Sorry for the trouble. Have a good day.",
       "response_kn": "ಆಗ್ಲಿರೀ, ಮತ್ತ ಕಾಲ್ ಮಾಡಂಗಿಲ್ಲ. ತೊಂದರೆಗೆ ಕ್ಷಮಿಸ್ರಿ. ನಮಸ್ಕಾರ."
+    },
+    {
+      "id": "discount",
+      "objection_en": "Give some discount.",
+      "objection_kn": "ಏನರೆ ಡಿಸ್ಕೌಂಟ್ ಕೊಡ್ರಿ.",
+      "approach": "Bargaining is normal in India; stay friendly. Never offer a discount or price on the call. Chetan decides pricing at the demo. Bring it back to value.",
+      "books": [
+        "luxury_strategy",
+        "blue_ocean",
+        "it_happened_in_india"
+      ],
+      "response_en": "Chetan decides the pricing at the demo. First let's see if it's really useful for you.",
+      "response_kn": "ರೇಟು ಚೇತನ್ ಡೆಮೋದಾಗ ಹೇಳ್ತಾರ್ರೀ. ಮೊದಲು ನಿಮಗ ಖರೇನ ಉಪಯೋಗ ಆಗ್ತದೋ ನೋಡೋಣು."
+    },
+    {
+      "id": "ask_family",
+      "objection_en": "I'll ask my family / partner and tell you.",
+      "objection_kn": "ಮನ್ಯಾಗ / ಪಾರ್ಟ್ನರ್‌ಗೆ ಕೇಳಿ ಹೇಳ್ತೀನಿ.",
+      "approach": "Welcome it. Invite the other decision-maker to the demo and agree a callback time.",
+      "books": [
+        "it_happened_in_india",
+        "mom_test"
+      ],
+      "response_en": "That's good. If they can be there at the demo, you can both see it together. When shall I call back?",
+      "response_kn": "ಛಲೋ ಆತ್ರೀ. ಡೆಮೋ ಟೈಮ್‌ನಾಗ ಅವರೂ ಇದ್ರ ಇಬ್ರೂ ನೋಡಬಹುದು. ಯಾವಾಗ ಮತ್ತ ಕಾಲ್ ಮಾಡ್ಲಿ?"
+    },
+    {
+      "id": "trust",
+      "objection_en": "How do I trust you? What if you take money and disappear?",
+      "objection_kn": "ನಿಮ್ಮನ್ನ ಹೆಂಗ ನಂಬೋದು?",
+      "approach": "Label the concern, it is fair. A free demo comes first; they decide only after seeing it. Never ask for payment or personal details on the call.",
+      "books": [
+        "analects",
+        "rhetoric",
+        "voss"
+      ],
+      "response_en": "That's a fair worry. First see the free demo; decide only after that. I won't ask for any payment details on this call.",
+      "response_kn": "ನಿಮ್ ಚಿಂತಿ ಸರಿನರೀ. ಮೊದಲು ಫ್ರೀ ಡೆಮೋ ನೋಡ್ರಿ, ಆಮ್ಯಾಲ ನೀವ ನಿರ್ಧಾರ ಮಾಡ್ರಿ. ಈ ಕಾಲ್‌ನಾಗ ದುಡ್ಡಿನ ಡೀಟೇಲ್ಸ್ ಏನೂ ಕೇಳಂಗಿಲ್ಲ."
     }
   ],
   "excluded_tactics": [
-    {"tactic": "Fake scarcity or deadlines ('only today', 'last 2 slots')", "source": "commonly drawn from Cialdini's scarcity principle", "why": "Our rule: no fake urgency."},
-    {"tactic": "Assumptive or high-pressure closes that ignore a 'no'", "source": "classic hard-close scripts", "why": "Boutique-consultant style; a 'no' is respected."},
-    {"tactic": "Invented testimonials or customer counts", "source": "misused social proof", "why": "Facts only from knowledge_base.json."},
-    {"tactic": "Hiding that the caller is an AI", "source": "-", "why": "The agent must always disclose it is an AI."},
-    {"tactic": "Collecting payment or identity details on the call", "source": "-", "why": "Never ask for Aadhaar, bank, card, OTP or passwords."}
+    {
+      "tactic": "Fake scarcity or deadlines ('only today', 'last 2 slots')",
+      "source": "commonly drawn from Cialdini's scarcity principle",
+      "why": "Our rule: no fake urgency."
+    },
+    {
+      "tactic": "Assumptive or high-pressure closes that ignore a 'no'",
+      "source": "classic hard-close scripts",
+      "why": "Boutique-consultant style; a 'no' is respected."
+    },
+    {
+      "tactic": "Invented testimonials or customer counts",
+      "source": "misused social proof",
+      "why": "Facts only from knowledge_base.json."
+    },
+    {
+      "tactic": "Hiding that the caller is an AI",
+      "source": "-",
+      "why": "The agent must always disclose it is an AI."
+    },
+    {
+      "tactic": "Collecting payment or identity details on the call",
+      "source": "-",
+      "why": "Never ask for Aadhaar, bank, card, OTP or passwords."
+    },
+    {
+      "tactic": "Deception stratagems (e.g. from the Thirty-Six Stratagems)",
+      "source": "Chinese stratagem literature",
+      "why": "We never deceive customers."
+    },
+    {
+      "tactic": "Dand and bhed (threats, creating division)",
+      "source": "Kautilya's four upayas",
+      "why": "Only saam (persuasion through advice) fits our style."
+    }
   ],
   "quiz": [
     {
@@ -291,7 +977,10 @@
       ],
       "answer": 1,
       "explain": "Mirroring (Voss) gets them to explain more. Pitching too early skips discovery (SPIN), and 'why' questions sound accusing.",
-      "books": ["voss", "spin"]
+      "books": [
+        "voss",
+        "spin"
+      ]
     },
     {
       "scenario": "The customer asks 'How much is it?' in the first minute, and the form-filling price is not approved yet.",
@@ -302,7 +991,10 @@
       ],
       "answer": 1,
       "explain": "Value before price (Tracy, Gap Selling), and a price is never spoken unless price_approved is true.",
-      "books": ["tracy", "gap"]
+      "books": [
+        "tracy",
+        "gap"
+      ]
     },
     {
       "scenario": "The customer has agreed it would help. How do you close?",
@@ -313,7 +1005,10 @@
       ],
       "answer": 2,
       "explain": "A choice of two easy options (Ziglar) with a confident next step (Challenger). Fake scarcity is excluded.",
-      "books": ["ziglar", "challenger"]
+      "books": [
+        "ziglar",
+        "challenger"
+      ]
     },
     {
       "scenario": "The customer says 'Maybe later, sounds nice.' How do you record the outcome?",
@@ -324,7 +1019,9 @@
       ],
       "answer": 1,
       "explain": "Polite interest is not commitment (The Mom Test). Only a scheduled next step counts.",
-      "books": ["mom_test"]
+      "books": [
+        "mom_test"
+      ]
     },
     {
       "scenario": "Which opener best fits our style?",
@@ -335,7 +1032,10 @@
       ],
       "answer": 1,
       "explain": "AI disclosure, a short clear reason (Fanatical Prospecting) and a no-oriented question (Voss). Never ask for Aadhaar.",
-      "books": ["fanatical", "voss"]
+      "books": [
+        "fanatical",
+        "voss"
+      ]
     },
     {
       "scenario": "The customer says 'We already manage fine.' What do you do?",
@@ -346,7 +1046,70 @@
       ],
       "answer": 1,
       "explain": "Never argue (Carnegie). Look for a gap; if there is none, there is no sale (Gap Selling).",
-      "books": ["carnegie", "gap"]
+      "books": [
+        "carnegie",
+        "gap"
+      ]
+    },
+    {
+      "scenario": "The owner says 'Give some discount, then I'll think.' What do you do?",
+      "options": [
+        "Offer 10% off if they book today.",
+        "Stay friendly, say Chetan decides pricing at the demo, and bring it back to whether it's useful.",
+        "Say the price is fixed, take it or leave it."
+      ],
+      "answer": 1,
+      "explain": "No discounts or fake deadlines (The Luxury Strategy); compete on value, not price (Blue Ocean Strategy), and stay warm.",
+      "books": [
+        "luxury_strategy",
+        "blue_ocean"
+      ]
+    },
+    {
+      "scenario": "The customer becomes impatient and a little rude. Which response fits?",
+      "options": [
+        "Speak faster to finish the pitch.",
+        "Become softer and slower, acknowledge them, and offer to call at a better time.",
+        "Tell them politely that they are being rude."
+      ],
+      "answer": 1,
+      "explain": "Softness overcomes hardness (Tao Te Ching) and the best victory is won without a fight (The Art of War).",
+      "books": [
+        "tao_te_ching",
+        "art_of_war"
+      ]
+    },
+    {
+      "scenario": "The customer says 'I'll ask my partner.' Best reply?",
+      "options": [
+        "Your partner doesn't need to decide; this is a great deal.",
+        "That's good; invite the partner to the demo and agree a callback time.",
+        "Okay, bye."
+      ],
+      "answer": 1,
+      "explain": "Decisions are often made together in Indian businesses (It Happened in India); only a scheduled next step counts (The Mom Test).",
+      "books": [
+        "it_happened_in_india",
+        "mom_test"
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "indian",
+      "name": "Indian"
+    },
+    {
+      "id": "american",
+      "name": "American"
+    },
+    {
+      "id": "chinese",
+      "name": "Chinese"
+    },
+    {
+      "id": "european",
+      "name": "European"
     }
   ]
 }

@@ -38,6 +38,8 @@
   .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); margin-left: 4px; max-width: 100%; }
   .example { margin-top: 4px; padding: 6px 10px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .chip { border: 1px solid var(--line); background: var(--surface); color: var(--text); padding: 5px 12px; border-radius: 999px; font: inherit; font-size: 14px; cursor: pointer; }
+  .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
   input[type=search] { flex: 1; min-width: 200px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; }
   .btn { border: 1px solid var(--accent); background: transparent; color: var(--accent); padding: 7px 14px; border-radius: 8px; font: inherit; cursor: pointer; }
   .btn.primary { background: var(--accent); color: var(--bg); }
@@ -54,7 +56,7 @@
 <body>
 <header>
   <h1>Sales Trainer · SourceCode Studio</h1>
-  <p>The methods from classic sales books, mapped onto our calm, consultant-style Kannada call.</p>
+  <p>Sales wisdom from Indian, American, Chinese and European books, mapped onto our calm, consultant-style Kannada call.</p>
 </header>
 <nav id="tabs" role="tablist"></nav>
 <main id="view"><p class="meta">Loading playbook…</p></main>
@@ -67,6 +69,9 @@ const TABS = [
 let PB = null, current = "flow";
 const view = document.getElementById("view");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const yearText = y => y < 0 ? `c. ${-y} BCE` : y;
+const regionName = id => (PB.regions.find(r => r.id === id) || {}).name || id;
+let region = "all";
 const bookTitle = id => (PB.books.find(b => b.id === id) || {}).title || id;
 
 function renderTabs() {
@@ -100,12 +105,22 @@ function renderFlow() {
 }
 
 function renderBooks() {
-  view.innerHTML = `<div class="row"><input type="search" id="q" placeholder="Search books, authors or ideas…"></div><div id="list"></div>`;
+  const count = id => PB.books.filter(b => id === "all" || b.region === id).length;
+  view.innerHTML = `<div class="row" id="regions">` +
+    [{id: "all", name: "All"}, ...PB.regions].map(r =>
+      `<button class="chip" data-region="${r.id}" aria-pressed="${r.id === region}">${esc(r.name)} · ${count(r.id)}</button>`).join("") +
+    `</div><div class="row"><input type="search" id="q" placeholder="Search books, authors or ideas…"></div><div id="list"></div>`;
+  document.getElementById("regions").addEventListener("click", e => {
+    const r = e.target.dataset.region; if (!r) return;
+    region = r;
+    document.querySelectorAll("#regions .chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.region === r));
+    draw();
+  });
   const draw = () => {
     const q = document.getElementById("q").value.toLowerCase();
-    const books = PB.books.filter(b => !q || JSON.stringify(b).toLowerCase().includes(q));
+    const books = PB.books.filter(b => (region === "all" || b.region === region) && (!q || JSON.stringify(b).toLowerCase().includes(q)));
     document.getElementById("list").innerHTML = books.map(b =>
-      `<div class="card"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} · ${b.year}</div>
+      `<div class="card"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} · ${yearText(b.year)} · ${esc(regionName(b.region))}</div>
        <p>${esc(b.core_idea)}</p><ul>` +
       b.principles.map(p => `<li><strong>${esc(p.rule)}</strong><span class="tag">${esc(PB.stages.find(s => s.id === p.stage).name)}</span><br>
         <span class="meta">On our call:</span> ${esc(p.on_our_call)}${example(p)}</li>`).join("") +

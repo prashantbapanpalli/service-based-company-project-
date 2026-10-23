@@ -44,3 +44,15 @@ def test_check_playbook_catches_bad_entries():
     assert any("unknown stage" in p for p in problems)
     assert any("answer index" in p for p in problems)
     assert any("otp" in p for p in problems)
+
+
+def test_every_region_has_books():
+    playbook = load_playbook()
+    for region in playbook["regions"]:
+        assert sum(b["region"] == region["id"] for b in playbook["books"]) >= 5
+
+
+def test_check_playbook_catches_unknown_region():
+    playbook = copy.deepcopy(load_playbook())
+    playbook["books"][0]["region"] = "martian"
+    assert any("unknown region" in p for p in check_playbook(playbook))
