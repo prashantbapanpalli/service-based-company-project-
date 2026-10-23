@@ -16,6 +16,8 @@ LiveKit Agents 1.8 (Python) · Sarvam AI (STT `STTRealtime`, TTS `bulbul:v3`) ·
 - `agent.py` — LiveKit voice agent: fixed AI-disclosure greeting, function tools, silence handling, max call time, cost logging
 - `app/knowledge.py` — builds the agent's instructions from `data/knowledge_base.json` + `data/sales_playbook.json`
 - `data/sales_playbook.json` — sales-book methods (own-words summaries) by call stage, objections, quiz, excluded tactics
+- `data/call_scenarios.json` + `app/scenarios.py` — 46 call situations (silence, wrong number, abuse, prompt injection, do-not-call…) with tool + outcome; reply grader
+- `tools/scenario_eval.py` — runs scenario tests against the real LLM (`--dry-run` needs no key)
 - `trainer.py` + `web/index.html` — browser sales-training interface (`python trainer.py` → http://localhost:8000)
 - `app/call_logic.py` — fixed greetings + `CallRecorder` (outcome → database), cost estimate
 - `app/db.py` — SQLite: leads, calls, opt_outs, handovers, reports
@@ -27,6 +29,7 @@ LiveKit Agents 1.8 (Python) · Sarvam AI (STT `STTRealtime`, TTS `bulbul:v3`) ·
 ## Commands (Windows, venv active: `.venv\Scripts\activate`)
 - Tests: `python -m pytest tests -q`
 - Sales trainer: `python trainer.py`
+- Scenario tests vs the real LLM: `python tools/scenario_eval.py`
 - Talk to the agent with the mic: `python agent.py console`
 - Render demo audio: `python tools/render_demo.py`
 - Leads: `python manage.py import data/sample_leads.csv`, `python manage.py report`

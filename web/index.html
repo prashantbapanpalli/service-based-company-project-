@@ -63,10 +63,10 @@
 
 <script>
 const TABS = [
-  ["flow", "Call flow"], ["books", "Books"], ["objections", "Objection practice"],
+  ["flow", "Call flow"], ["books", "Books"], ["objections", "Objection practice"], ["situations", "Call situations"],
   ["quiz", "Quiz"], ["prompt", "Agent instructions"]
 ];
-let PB = null, current = "flow";
+let PB = null, SC = null, current = "flow";
 const view = document.getElementById("view");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const yearText = y => y < 0 ? `c. ${-y} BCE` : y;
@@ -176,27 +176,54 @@ function renderQuiz() {
   });
 }
 
+let scCat = "all", scPractice = false;
+function renderSituations() {
+  const count = id => SC.scenarios.filter(s => id === "all" || s.category === id).length;
+  view.innerHTML = `<div class="row" id="cats">` +
+    [{id: "all", name: "All"}, ...SC.categories].map(c =>
+      `<button class="chip" data-cat="${c.id}" aria-pressed="${c.id === scCat}">${esc(c.name)} · ${count(c.id)}</button>`).join("") +
+    `</div><div class="row"><label><input type="checkbox" id="practice" ${scPractice ? "checked" : ""}> Practice mode (hide answers until you click)</label></div><div id="list"></div>`;
+  document.getElementById("cats").addEventListener("click", e => {
+    const c = e.target.dataset.cat; if (!c) return;
+    scCat = c; renderSituations();
+  });
+  document.getElementById("practice").onchange = e => { scPractice = e.target.checked; renderSituations(); };
+  const items = SC.scenarios.filter(s => scCat === "all" || s.category === scCat);
+  document.getElementById("list").innerHTML = items.map(s => `
+    <div class="card"><h3>${esc(s.situation)}</h3><div class="meta">Signs: ${esc(s.signs)}</div>
+      ${scPractice ? `<button class="btn" data-reveal="${s.id}" style="margin-top:10px">What should the agent do?</button>` : ""}
+      <div id="ans-${s.id}" class="${scPractice ? "hidden" : ""}">
+        <p><strong>Do:</strong> ${esc(s.do)}</p>
+        ${s.say_kn ? `<div class="example kn">${esc(s.say_kn)}</div>` : ""}${s.say_en ? `<div class="example">${esc(s.say_en)}</div>` : ""}
+        <p class="meta">Tool: <span class="tag">${esc(s.action)}</span> · Outcome: <span class="tag">${esc(s.outcome)}</span>${s.test ? ` · <span class="tag">auto-tested</span>` : ""}</p>
+      </div></div>`).join("");
+  document.getElementById("list").onclick = e => {
+    const id = e.target.dataset.reveal; if (!id) return;
+    document.getElementById("ans-" + id).classList.remove("hidden"); e.target.remove();
+  };
+}
+
 async function renderPrompt() {
   view.innerHTML = `<p class="meta">Loading…</p>`;
   try {
     const r = await (await fetch("/api/instructions")).json();
     const problems = r.problems.length
       ? `<div class="notice"><strong>Playbook problems:</strong><ul>${r.problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>` : "";
-    view.innerHTML = problems + `<div class="card"><p class="meta">This is exactly what the voice agent is told before every call, built from knowledge_base.json and sales_playbook.json.</p><pre class="kn">${esc(r.text)}</pre></div>`;
+    view.innerHTML = problems + `<div class="card"><p class="meta">This is exactly what the voice agent is told before every call, built from knowledge_base.json, sales_playbook.json and call_scenarios.json.</p><pre class="kn">${esc(r.text)}</pre></div>`;
   } catch (e) {
     view.innerHTML = `<div class="notice">Could not load instructions. Start the trainer with <code>python trainer.py</code>.</div>`;
   }
 }
 
 function render() {
-  ({ flow: renderFlow, books: renderBooks, objections: renderObjections, quiz: renderQuiz, prompt: renderPrompt })[current]();
+  ({ flow: renderFlow, books: renderBooks, objections: renderObjections, quiz: renderQuiz, situations: renderSituations, prompt: renderPrompt })[current]();
 }
 
 (async () => {
   try { const t = localStorage.getItem("tab"); if (TABS.some(x => x[0] === t)) current = t; } catch {}
   renderTabs();
   try {
-    PB = await (await fetch("/api/playbook")).json();
+    [PB, SC] = await Promise.all(["/api/playbook", "/api/scenarios"].map(async u => (await fetch(u)).json()));
     render();
   } catch (e) {
     view.innerHTML = `<div class="notice">Could not load the playbook. Start the trainer with <code>python trainer.py</code> and open http://localhost:8000.</div>`;

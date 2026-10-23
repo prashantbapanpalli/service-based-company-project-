@@ -37,5 +37,6 @@
     "next_step": "a free demo, in person in Dharwad/Hubballi or on a video call",
     "demo_length": "about 15 minutes"
   },
+  "callback_hours": {"start": "10:00", "end": "19:00"},
   "never_ask_for": ["Aadhaar", "bank account", "card number", "OTP", "password"]
 }

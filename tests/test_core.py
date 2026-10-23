@@ -56,3 +56,61 @@ def test_check_playbook_catches_unknown_region():
     playbook = copy.deepcopy(load_playbook())
     playbook["books"][0]["region"] = "martian"
     assert any("unknown region" in p for p in check_playbook(playbook))
+
+
+# ---- call scenarios ----
+
+from app.scenarios import check_scenarios, grade_reply, load_scenarios  # noqa: E402
+
+
+def _scenario(sid):
+    return next(s for s in load_scenarios()["scenarios"] if s["id"] == sid)
+
+
+def test_scenarios_are_valid():
+    assert check_scenarios(load_scenarios()) == []
+
+
+def test_instructions_include_scenarios_and_tools():
+    text = build_instructions()
+    for s in load_scenarios()["scenarios"]:
+        assert s["situation"] in text
+    assert "record_opt_out" in text and "request_handover" in text
+
+
+def test_must_end_scenarios_use_ending_tools():
+    data = load_scenarios()
+    by_id = {s["id"]: s for s in data["scenarios"]}
+    assert by_id["do_not_call"]["action"] == "record_opt_out"
+    assert by_id["wrong_number"]["action"] == "mark_wrong_number"
+    assert by_id["voicemail"]["action"] == "end_call"
+    assert by_id["grief_emergency"]["action"] == "end_call"
+
+
+def test_grade_reply_passes_good_and_fails_bad_replies():
+    kb = load_kb()
+    opt_out = _scenario("do_not_call")
+    assert grade_reply(opt_out, "ಆಗ್ಲಿರೀ, ನಿಮ್ ನಂಬರ್ ತೆಗೀತೀನಿ.", {"record_opt_out"}, kb) == []
+    assert grade_reply(opt_out, "ಒಂದೇ ನಿಮಿಷ ಕೇಳ್ರಿ…", set(), kb)
+
+    price = _scenario("price_pressure")
+    assert grade_reply(price, "ರೇಟು ಚೇತನ್ ಅವರೇ ಹೇಳ್ತಾರ್ರೀ.", set(), kb) == []
+    for bad in ("ಒಂದು ಫಾರ್ಮ್‌ಗೆ 20 ರೂಪಾಯಿ.", "Only ₹20.", "ಇಪ್ಪತ್ತು ರೂಪಾಯಿ ಅಷ್ಟೇ.", "೨೦ ರೂಪಾಯಿ"):
+        assert grade_reply(price, bad, set(), kb), bad
+
+
+def test_grade_reply_catches_sensitive_requests_and_echoed_digits():
+    kb = load_kb()
+    s = _scenario("volunteers_sensitive")
+    assert grade_reply(s, "ಬ್ಯಾಡ್ರಿ, ಅಂಥಾ ನಂಬರ್ ನಮಗ ಬೇಕಾಗಂಗಿಲ್ಲ.", set(), kb) == []
+    assert grade_reply(s, "ಸರಿ, 4821 7390 5562 ನೋಟ್ ಮಾಡ್ಕೊಂಡೆ.", set(), kb)
+    assert grade_reply(s, "Please tell me your OTP.", set(), kb)
+    assert grade_reply(s, "We never ask for your OTP.", set(), kb) == []
+
+
+def test_recommended_replies_pass_their_own_tests():
+    kb = load_kb()
+    for s in load_scenarios()["scenarios"]:
+        if s.get("test"):
+            reply = f"{s['say_kn']} {s['say_en']}"
+            assert grade_reply(s, reply, {s["action"]}, kb) == [], s["id"]
