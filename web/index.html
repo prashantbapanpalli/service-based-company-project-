@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f5f2; --surface: #ffffff; --text: #1d1c1a; --muted: #6b6862; --line: #e4e1db;
+    --accent: #8a5a2b; --accent-soft: #f3e9de; --good: #2f7a4a; --good-soft: #e3f2e8;
+    --bad: #a63d32; --bad-soft: #f8e4e1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151413; --surface: #1f1e1c; --text: #ece9e4; --muted: #a39f97; --line: #34322e;
+      --accent: #d9a46c; --accent-soft: #3a2c1f; --good: #7cc596; --good-soft: #1f3327;
+      --bad: #e58a7f; --bad-soft: #3d2320;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; }
+  .kn { font-family: "Noto Sans Kannada", Inter, sans-serif; }
+  header { max-width: 980px; margin: 0 auto; padding: 28px 16px 8px; }
+  header h1 { margin: 0; font-size: 24px; letter-spacing: -0.01em; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  nav { max-width: 980px; margin: 16px auto 0; padding: 0 16px; display: flex; gap: 6px; flex-wrap: wrap; }
+  nav button { border: 1px solid var(--line); background: var(--surface); color: var(--text); padding: 8px 14px; border-radius: 999px; font: inherit; cursor: pointer; }
+  nav button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  main { max-width: 980px; margin: 0 auto; padding: 20px 16px 60px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; }
+  .card h3 { margin: 0 0 4px; font-size: 16px; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .goal { color: var(--muted); margin: 0 0 10px; }
+  ul { margin: 8px 0 0; padding-left: 18px; }
+  li { margin: 6px 0; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); margin-left: 4px; max-width: 100%; }
+  .example { margin-top: 4px; padding: 6px 10px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  input[type=search] { flex: 1; min-width: 200px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; }
+  .btn { border: 1px solid var(--accent); background: transparent; color: var(--accent); padding: 7px 14px; border-radius: 8px; font: inherit; cursor: pointer; }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .option { display: block; width: 100%; text-align: left; margin: 8px 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+  .option.right { border-color: var(--good); background: var(--good-soft); }
+  .option.wrong { border-color: var(--bad); background: var(--bad-soft); }
+  .notice { padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); margin-bottom: 14px; font-size: 14px; }
+  .excluded li { color: var(--muted); }
+  pre { white-space: pre-wrap; word-break: break-word; font: 13px/1.5 ui-monospace, Menlo, Consolas, monospace; margin: 0; }
+  .hidden { display: none; }
+  .score { font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sales Trainer · SourceCode Studio</h1>
+  <p>The methods from classic sales books, mapped onto our calm, consultant-style Kannada call.</p>
+</header>
+<nav id="tabs" role="tablist"></nav>
+<main id="view"><p class="meta">Loading playbook…</p></main>
+
+<script>
+const TABS = [
+  ["flow", "Call flow"], ["books", "Books"], ["objections", "Objection practice"],
+  ["quiz", "Quiz"], ["prompt", "Agent instructions"]
+];
+let PB = null, current = "flow";
+const view = document.getElementById("view");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const bookTitle = id => (PB.books.find(b => b.id === id) || {}).title || id;
+
+function renderTabs() {
+  document.getElementById("tabs").innerHTML = TABS.map(([id, name]) =>
+    `<button role="tab" aria-selected="${id === current}" data-tab="${id}">${name}</button>`).join("");
+}
+document.getElementById("tabs").addEventListener("click", e => {
+  const t = e.target.dataset.tab; if (!t) return;
+  current = t; try { localStorage.setItem("tab", t); } catch {}
+  renderTabs(); render();
+});
+
+function example(p) {
+  let h = "";
+  if (p.example_kn) h += `<div class="example kn">${esc(p.example_kn)}</div>`;
+  if (p.example_en) h += `<div class="example">${esc(p.example_en)}</div>`;
+  return h;
+}
+
+function renderFlow() {
+  const notice = PB.kannada_reviewed ? "" :
+    `<div class="notice">Kannada example lines are drafts. Please read them aloud and correct anything that doesn't sound natural in Dharwad/Hubballi, then set <code>kannada_reviewed</code> to true.</div>`;
+  view.innerHTML = notice + PB.stages.map((s, i) => {
+    const items = PB.books.flatMap(b => b.principles.filter(p => p.stage === s.id).map(p => ({...p, book: b})));
+    return `<div class="card"><h3>${i + 1}. ${esc(s.name)}</h3><p class="goal">${esc(s.goal)}</p><ul>` +
+      items.map(p => `<li>${esc(p.on_our_call)} <span class="tag">${esc(p.book.title)}</span>${example(p)}</li>`).join("") +
+      `</ul></div>`;
+  }).join("") +
+  `<div class="card excluded"><h3>Tactics we never use</h3><ul>` +
+  PB.excluded_tactics.map(t => `<li><strong>${esc(t.tactic)}</strong> — ${esc(t.why)}</li>`).join("") + `</ul></div>`;
+}
+
+function renderBooks() {
+  view.innerHTML = `<div class="row"><input type="search" id="q" placeholder="Search books, authors or ideas…"></div><div id="list"></div>`;
+  const draw = () => {
+    const q = document.getElementById("q").value.toLowerCase();
+    const books = PB.books.filter(b => !q || JSON.stringify(b).toLowerCase().includes(q));
+    document.getElementById("list").innerHTML = books.map(b =>
+      `<div class="card"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} · ${b.year}</div>
+       <p>${esc(b.core_idea)}</p><ul>` +
+      b.principles.map(p => `<li><strong>${esc(p.rule)}</strong><span class="tag">${esc(PB.stages.find(s => s.id === p.stage).name)}</span><br>
+        <span class="meta">On our call:</span> ${esc(p.on_our_call)}${example(p)}</li>`).join("") +
+      `</ul></div>`).join("") || `<p class="meta">No match.</p>`;
+  };
+  document.getElementById("q").addEventListener("input", draw);
+  draw();
+}
+
+let objIndex = 0;
+function renderObjections() {
+  const o = PB.objections[objIndex];
+  view.innerHTML = `<div class="row"><span class="meta">${objIndex + 1} of ${PB.objections.length}</span>
+      <button class="btn" id="prev">Previous</button><button class="btn" id="next">Next</button></div>
+    <div class="card"><div class="meta">The customer says:</div>
+      <h3 class="kn" style="font-size:20px">“${esc(o.objection_kn)}”</h3><div class="meta">${esc(o.objection_en)}</div>
+      <p>Think: how would you reply, calmly, in one or two short sentences? Then reveal.</p>
+      <button class="btn primary" id="reveal">Show the recommended reply</button>
+      <div id="answer" class="hidden">
+        <p><strong>Approach:</strong> ${esc(o.approach)}</p>
+        <div class="example kn">${esc(o.response_kn)}</div><div class="example">${esc(o.response_en)}</div>
+        <p class="meta">From: ${o.books.map(bookTitle).map(esc).join(", ")}</p>
+      </div></div>`;
+  document.getElementById("reveal").onclick = () => document.getElementById("answer").classList.remove("hidden");
+  document.getElementById("prev").onclick = () => { objIndex = (objIndex + PB.objections.length - 1) % PB.objections.length; renderObjections(); };
+  document.getElementById("next").onclick = () => { objIndex = (objIndex + 1) % PB.objections.length; renderObjections(); };
+}
+
+let quiz = { i: 0, score: 0, answered: false };
+function renderQuiz() {
+  if (quiz.i >= PB.quiz.length) {
+    view.innerHTML = `<div class="card"><h3>Done</h3><p class="score">Score: ${quiz.score} / ${PB.quiz.length}</p>
+      <button class="btn primary" id="again">Try again</button></div>`;
+    document.getElementById("again").onclick = () => { quiz = { i: 0, score: 0, answered: false }; renderQuiz(); };
+    return;
+  }
+  const q = PB.quiz[quiz.i];
+  view.innerHTML = `<div class="row"><span class="meta">Question ${quiz.i + 1} of ${PB.quiz.length}</span><span class="score">Score: ${quiz.score}</span></div>
+    <div class="card"><h3>${esc(q.scenario)}</h3>
+    ${q.options.map((opt, k) => `<button class="option" data-k="${k}">${esc(opt)}</button>`).join("")}
+    <div id="explain" class="hidden"><p>${esc(q.explain)}</p><button class="btn primary" id="nextq">Next question</button></div></div>`;
+  view.querySelectorAll(".option").forEach(btn => btn.onclick = () => {
+    if (quiz.answered) return;
+    quiz.answered = true;
+    const k = +btn.dataset.k;
+    if (k === q.answer) quiz.score++;
+    view.querySelectorAll(".option").forEach(b => {
+      if (+b.dataset.k === q.answer) b.classList.add("right");
+      else if (b === btn) b.classList.add("wrong");
+    });
+    document.getElementById("explain").classList.remove("hidden");
+    document.getElementById("nextq").onclick = () => { quiz.i++; quiz.answered = false; renderQuiz(); };
+  });
+}
+
+async function renderPrompt() {
+  view.innerHTML = `<p class="meta">Loading…</p>`;
+  try {
+    const r = await (await fetch("/api/instructions")).json();
+    const problems = r.problems.length
+      ? `<div class="notice"><strong>Playbook problems:</strong><ul>${r.problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>` : "";
+    view.innerHTML = problems + `<div class="card"><p class="meta">This is exactly what the voice agent is told before every call, built from knowledge_base.json and sales_playbook.json.</p><pre class="kn">${esc(r.text)}</pre></div>`;
+  } catch (e) {
+    view.innerHTML = `<div class="notice">Could not load instructions. Start the trainer with <code>python trainer.py</code>.</div>`;
+  }
+}
+
+function render() {
+  ({ flow: renderFlow, books: renderBooks, objections: renderObjections, quiz: renderQuiz, prompt: renderPrompt })[current]();
+}
+
+(async () => {
+  try { const t = localStorage.getItem("tab"); if (TABS.some(x => x[0] === t)) current = t; } catch {}
+  renderTabs();
+  try {
+    PB = await (await fetch("/api/playbook")).json();
+    render();
+  } catch (e) {
+    view.innerHTML = `<div class="notice">Could not load the playbook. Start the trainer with <code>python trainer.py</code> and open http://localhost:8000.</div>`;
+  }
+})();
+</script>
+</body>
+</html>
