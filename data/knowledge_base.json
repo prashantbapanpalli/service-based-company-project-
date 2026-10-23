@@ -1,0 +1,94 @@
+{
+  "business": {
+    "name": "SourceCode Studio",
+    "name_kn": "ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋ",
+    "owner": "Chetan",
+    "city": "Dharwad",
+    "city_kn": "ಧಾರವಾಡ",
+    "serves": [
+      "computer centres",
+      "cyber cafés",
+      "small businesses"
+    ]
+  },
+  "products": [
+    {
+      "id": "workflow_automation",
+      "name": "Workflow Automation",
+      "summary": "A form-filling assistant that fills repetitive online forms for the centre, so staff spend less time typing and make fewer mistakes.",
+      "good_for": [
+        "computer centres",
+        "cyber cafés"
+      ],
+      "pain_points": [
+        "staff spend most of the day typing the same details into online forms",
+        "long queues during exam, scholarship and government-scheme seasons",
+        "typing mistakes lead to rejected applications and unhappy customers"
+      ],
+      "price": "₹20 per form",
+      "price_approved": false
+    },
+    {
+      "id": "ai_website_agent",
+      "name": "AI Website Agent",
+      "summary": "A website for the business with a built-in AI chat assistant that answers customer questions any time of day.",
+      "good_for": [
+        "small businesses",
+        "computer centres",
+        "cyber cafés"
+      ],
+      "pain_points": [
+        "customers call or come in just to ask timings, services and documents needed",
+        "no online presence, so new customers cannot find the business",
+        "questions arrive at night when nobody is there to answer"
+      ],
+      "price": "custom quote after a short demo",
+      "price_approved": true
+    }
+  ],
+  "offer": {
+    "next_step": "a free demo, in person in Dharwad/Hubballi or on a video call",
+    "demo_length": "about 15 minutes"
+  },
+  "callback_hours": {
+    "start": "10:00",
+    "end": "19:00"
+  },
+  "never_ask_for": [
+    "Aadhaar",
+    "bank account",
+    "card number",
+    "OTP",
+    "password"
+  ],
+  "stt_vocabulary": [
+    "SourceCode Studio",
+    "ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋ",
+    "Chetan",
+    "ಚೇತನ್",
+    "Dharwad",
+    "ಧಾರವಾಡ",
+    "Hubballi",
+    "ಹುಬ್ಬಳ್ಳಿ",
+    "computer centre",
+    "cyber café",
+    "form",
+    "ಫಾರ್ಮ್",
+    "scholarship",
+    "ಸ್ಕಾಲರ್‌ಶಿಪ್",
+    "website",
+    "ವೆಬ್‌ಸೈಟ್",
+    "demo",
+    "ಡೆಮೋ",
+    "online",
+    "WhatsApp",
+    "AI"
+  ],
+  "call_rules": {
+    "max_attempts": 3,
+    "min_hours_between_calls": 24,
+    "max_call_seconds": 300,
+    "silence_timeout_seconds": 8,
+    "timezone_offset": "+05:30"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "about": "Fill these in from each provider's current pricing page (in ₹). Leave null if unknown; that part is then left out of the cost estimate and listed as missing. Never guess.",
+  "prices_inr": {
+    "llm_input_per_million_tokens": null,
+    "llm_cached_input_per_million_tokens": null,
+    "llm_output_per_million_tokens": null,
+    "stt_per_minute": null,
+    "tts_per_10k_characters": null,
+    "telephony_per_minute": null
+  },
+  "checked_on": null
+}
