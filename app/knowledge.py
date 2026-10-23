@@ -181,3 +181,12 @@ OBJECTIONS:
 NEVER USE THESE TACTICS:
 {excluded}
 """
+
+
+def build_stt_prompt(kb=None):
+    """Vocabulary hint for Sarvam STTRealtime(prompt=...), so names and product words are recognised."""
+    kb = kb if kb is not None else load_kb()
+    words = list(kb.get("stt_vocabulary", []))
+    words += [p["name"] for p in kb["products"]]
+    unique = list(dict.fromkeys(words))
+    return "Phone sales call in Kannada (Dharwad/Hubballi), often mixed with English words. Words: " + ", ".join(unique)

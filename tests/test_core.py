@@ -132,3 +132,36 @@ def test_field_techniques_reach_the_agent():
     text = build_instructions(playbook=playbook)
     for t in playbook["field_techniques"]:
         assert t["on_our_call"] in text
+
+
+# ---- speech hints and LiveKit simulations ----
+
+def test_stt_prompt_has_business_words():
+    from app.knowledge import build_stt_prompt
+    prompt = build_stt_prompt()
+    for word in ("SourceCode Studio", "ಧಾರವಾಡ", "Workflow Automation"):
+        assert word in prompt
+
+
+def test_simulations_export_is_valid_yaml_and_hides_unapproved_price():
+    import importlib.util
+    import sys
+    from pathlib import Path
+
+    import pytest
+
+    yaml = pytest.importorskip("yaml")
+    path = Path(__file__).resolve().parent.parent / "tools" / "export_simulations.py"
+    spec = importlib.util.spec_from_file_location("export_simulations", path)
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules["export_simulations"] = mod
+    spec.loader.exec_module(mod)
+
+    kb = load_kb()
+    items = mod.build_simulations(load_scenarios(), load_playbook(), kb)
+    data = yaml.safe_load(mod.to_yaml(items, kb))
+    assert len(data["scenarios"]) == len(items) > 20
+    assert len({s["id"] for s in data["scenarios"]}) == len(items)
+    for s in data["scenarios"]:
+        assert "Workflow Automation" in s["agent_expectations"]
+        assert "OPENING LINE" in s["instructions"]

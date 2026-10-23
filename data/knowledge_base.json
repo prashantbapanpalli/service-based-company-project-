@@ -3,14 +3,21 @@
     "name": "SourceCode Studio",
     "owner": "Chetan",
     "city": "Dharwad",
-    "serves": ["computer centres", "cyber cafés", "small businesses"]
+    "serves": [
+      "computer centres",
+      "cyber cafés",
+      "small businesses"
+    ]
   },
   "products": [
     {
       "id": "workflow_automation",
       "name": "Workflow Automation",
       "summary": "A form-filling assistant that fills repetitive online forms for the centre, so staff spend less time typing and make fewer mistakes.",
-      "good_for": ["computer centres", "cyber cafés"],
+      "good_for": [
+        "computer centres",
+        "cyber cafés"
+      ],
       "pain_points": [
         "staff spend most of the day typing the same details into online forms",
         "long queues during exam, scholarship and government-scheme seasons",
@@ -23,7 +30,11 @@
       "id": "ai_website_agent",
       "name": "AI Website Agent",
       "summary": "A website for the business with a built-in AI chat assistant that answers customer questions any time of day.",
-      "good_for": ["small businesses", "computer centres", "cyber cafés"],
+      "good_for": [
+        "small businesses",
+        "computer centres",
+        "cyber cafés"
+      ],
       "pain_points": [
         "customers call or come in just to ask timings, services and documents needed",
         "no online presence, so new customers cannot find the business",
@@ -37,6 +48,38 @@
     "next_step": "a free demo, in person in Dharwad/Hubballi or on a video call",
     "demo_length": "about 15 minutes"
   },
-  "callback_hours": {"start": "10:00", "end": "19:00"},
-  "never_ask_for": ["Aadhaar", "bank account", "card number", "OTP", "password"]
+  "callback_hours": {
+    "start": "10:00",
+    "end": "19:00"
+  },
+  "never_ask_for": [
+    "Aadhaar",
+    "bank account",
+    "card number",
+    "OTP",
+    "password"
+  ],
+  "stt_vocabulary": [
+    "SourceCode Studio",
+    "ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋ",
+    "Chetan",
+    "ಚೇತನ್",
+    "Dharwad",
+    "ಧಾರವಾಡ",
+    "Hubballi",
+    "ಹುಬ್ಬಳ್ಳಿ",
+    "computer centre",
+    "cyber café",
+    "form",
+    "ಫಾರ್ಮ್",
+    "scholarship",
+    "ಸ್ಕಾಲರ್‌ಶಿಪ್",
+    "website",
+    "ವೆಬ್‌ಸೈಟ್",
+    "demo",
+    "ಡೆಮೋ",
+    "online",
+    "WhatsApp",
+    "AI"
+  ]
 }

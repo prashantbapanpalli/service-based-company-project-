@@ -1223,6 +1223,16 @@
       "sources": [
         "smartreach"
       ]
+    },
+    {
+      "id": "qualify_decision_maker",
+      "stage": "discovery",
+      "rule": "Early in the call, confirm you are speaking with the person who decides.",
+      "on_our_call": "Ask gently whether they run the centre or who decides on new tools; if it's someone else, ask the best time to reach them.",
+      "example_kn": "ಸೆಂಟರ್ ನೀವ ನೋಡ್ಕೋತೀರೇನ್ರೀ, ಅಥವಾ ಇಂಥಾ ವಿಷಯ ಬ್ಯಾರೆ ಯಾರರೆ ನಿರ್ಧಾರ ಮಾಡ್ತಾರ?",
+      "sources": [
+        "salesgpt"
+      ]
     }
   ],
   "web_sources": {
@@ -1257,6 +1267,10 @@
     "docket": {
       "title": "ChatGPT prompts for cold calling scripts (Docket)",
       "url": "https://www.docket.io/chat-gpt-prompts-for-sales/cold-calling-script"
+    },
+    "salesgpt": {
+      "title": "SalesGPT conversation stages (GitHub, MIT)",
+      "url": "https://github.com/filip-michalsky/SalesGPT"
     }
   }
 }

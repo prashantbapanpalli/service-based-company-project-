@@ -17,6 +17,8 @@ LiveKit Agents 1.8 (Python) · Sarvam AI (STT `STTRealtime`, TTS `bulbul:v3`) ·
 - `app/knowledge.py` — builds the agent's instructions from `data/knowledge_base.json` + `data/sales_playbook.json`
 - `data/sales_playbook.json` — sales-book methods (own-words summaries) by call stage, objections, quiz, excluded tactics
 - `data/call_scenarios.json` + `app/scenarios.py` — 46 call situations (silence, wrong number, abuse, prompt injection, do-not-call…) with tool + outcome; reply grader
+- `tools/export_simulations.py` → `data/simulations.yaml` for `lk agent simulate text agent.py --scenarios data/simulations.yaml`
+- `docs/github-research.md` — repos reviewed (LiveKit outbound caller, AMD, warm transfer, test framework, SalesGPT, AI4Bharat) and what to adopt when
 - `tools/scenario_eval.py` — runs scenario tests against the real LLM (`--dry-run` needs no key)
 - `trainer.py` + `web/index.html` — browser sales-training interface (`python trainer.py` → http://localhost:8000)
 - `app/call_logic.py` — fixed greetings + `CallRecorder` (outcome → database), cost estimate
