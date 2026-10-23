@@ -1,0 +1,23 @@
+{
+  "about": "A scripted example of how the agent should handle a good call (not a recording of the real AI). Rendered to audio by tools/render_demo.py. Every agent line is checked by tests against the voice and price rules.",
+  "kannada_reviewed": false,
+  "customer": {"name": "Ravi", "business": "Ravi Computers", "business_type": "computer centre", "city": "Dharwad"},
+  "turns": [
+    {"speaker": "agent", "kn": "ನಮಸ್ಕಾರ್ರೀ Ravi ಅವರೇ. ನಾನು ಧಾರವಾಡದ ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋದ AI ಅಸಿಸ್ಟೆಂಟ್. ಈಗ ಎರಡು ನಿಮಿಷ ಮಾತಾಡಾಕ ತೊಂದರೆ ಆಗ್ತದೇನ್ರೀ?", "en": "Hello Ravi. I'm the AI assistant of SourceCode Studio, Dharwad. Is now a bad time to talk for two minutes?", "why": "Fixed greeting: AI disclosure + no-oriented question (Voss)"},
+    {"speaker": "customer", "kn": "ಇಲ್ಲ, ಹೇಳ್ರಿ. ಏನು ವಿಷಯ?", "en": "No, go ahead. What is it about?"},
+    {"speaker": "agent", "kn": "ಧನ್ಯವಾದರೀ. ನಾವು ಕಂಪ್ಯೂಟರ್ ಸೆಂಟರ್‌ಗಳ ಫಾರ್ಮ್ ಕೆಲಸ ಫಾಸ್ಟ್ ಮಾಡಾಕ ಸಹಾಯ ಮಾಡ್ತೀವಿ. ಸ್ಕಾಲರ್‌ಶಿಪ್ ಸೀಸನ್‌ನಾಗ ನಿಮ್ ಸ್ಟಾಫ್‌ಗೆ ಯಾವ ಕೆಲಸ ಜಾಸ್ತಿ ಟೈಮ್ ತಗೊಳ್ತದರೀ?", "en": "Thank you. We help computer centres finish form work faster. During scholarship season, what takes your staff the most time?", "why": "Specific reason after permission (Regie), then a SPIN problem question"},
+    {"speaker": "customer", "kn": "ಫಾರ್ಮ್ ತುಂಬೋದೇ ರೀ. ದಿನಕ್ಕ ನೂರು ಫಾರ್ಮ್ ಆಗ್ತಾವ, ಜನ ಲೈನ್ ಹಚ್ಚಿ ನಿಂತಿರ್ತಾರ.", "en": "Filling forms. About a hundred a day, people stand in a queue."},
+    {"speaker": "agent", "kn": "ನೂರು ಫಾರ್ಮ್ ಅಂದ್ರ ಭಾಳ ಕೆಲಸರೀ. ಲೈನ್ ಉದ್ದ ಆದಾಗ ಕೆಲವು ಗಿರಾಕಿಗಳು ಬ್ಯಾರೆ ಕಡೆ ಹೋಗ್ತಾರೇನ್ರೀ?", "en": "A hundred forms is a lot of work. When the queue gets long, do some customers go elsewhere?", "why": "Acknowledge, then a SPIN implication question"},
+    {"speaker": "customer", "kn": "ಹೌದ್ರಿ, ಕೆಲವರು ಹೋಗ್ತಾರ. ತಪ್ಪು ಆದ್ರ ಮತ್ತ ಬರಬೇಕಾಗ್ತದ.", "en": "Yes, some leave. And if there's a mistake they have to come back."},
+    {"speaker": "agent", "kn": "ಅರ್ಥ ಆತ್ರೀ. ಒಂದೊಂದು ಫಾರ್ಮ್ ಅರ್ಧ ಟೈಮ್‌ನಾಗ ಆದ್ರ, ನಿಮಗ ಏನು ಉಪಯೋಗ ಆಗ್ತದರೀ?", "en": "I understand. If each form took half the time, what would that change for you?", "why": "Need-payoff question: the customer states the benefit (SPIN)"},
+    {"speaker": "customer", "kn": "ಇನ್ನೂ ಜಾಸ್ತಿ ಗಿರಾಕಿ ನೋಡಬಹುದು. ಅಂದಂಗ, ನೀವು ಮನುಷ್ಯರೋ ಮಷೀನೋ?", "en": "I could serve more customers. By the way, are you a person or a machine?"},
+    {"speaker": "agent", "kn": "ನಾನು AI ಅಸಿಸ್ಟೆಂಟ್ ರೀ. ನಮ್ ಫಾರ್ಮ್ ಅಸಿಸ್ಟೆಂಟ್ ಪದೇ ಪದೇ ತುಂಬೋ ಡೀಟೇಲ್ಸ್ ತುಂಬತದ, ಹಂಗಾಗಿ ಟೈಪಿಂಗ್ ಕಡಿಮಿ, ತಪ್ಪೂ ಕಡಿಮಿ. ಬೇಕಂದ್ರ ಚೇತನ್ ಅವರೇ ನಿಮಗ ಕಾಲ್ ಮಾಡ್ತಾರ.", "en": "I'm an AI assistant. Our form assistant fills the details you type again and again, so less typing and fewer mistakes. If you prefer, Chetan can call you himself.", "why": "Honest AI answer, one recommendation in their words, human option"},
+    {"speaker": "customer", "kn": "ಎಷ್ಟು ಆಗ್ತದ ರೇಟು?", "en": "How much does it cost?"},
+    {"speaker": "agent", "kn": "ಅದು ನೀವು ಎಷ್ಟು ಫಾರ್ಮ್ ಮಾಡ್ತೀರಿ ಅನ್ನೋದರ ಮ್ಯಾಲ ಅದರೀ. ಫ್ರೀ ಡೆಮೋದಾಗ ಚೇತನ್ ಸರಿಯಾಗಿ ಹೇಳ್ತಾರ.", "en": "It depends on how many forms you do. Chetan will tell you exactly at the free demo.", "why": "Price not approved, so no number is said; value before price"},
+    {"speaker": "customer", "kn": "ಆಗ್ಲಿ, ಒಮ್ಮೆ ನೋಡೋಣು.", "en": "Okay, let's see it once."},
+    {"speaker": "agent", "kn": "ಛಲೋ. ನಿಮ್ ಸೆಂಟರ್‌ಗೆ ಬಂದು ತೋರಿಸ್ಲೇನು, ಅಥವಾ ವಿಡಿಯೋ ಕಾಲ್‌ನಾಗ ತೋರಿಸ್ಲೇನ್ರೀ?", "en": "Great. Shall we show it at your centre, or on a video call?", "why": "Choice of two easy options (Ziglar)"},
+    {"speaker": "customer", "kn": "ಸೆಂಟರ್‌ಗೇ ಬರ್ರಿ. ಗುರುವಾರ ಮುಂಜಾನೆ ಹನ್ನೊಂದಕ್ಕ.", "en": "Come to the centre. Thursday at eleven in the morning."},
+    {"speaker": "agent", "tool": "book_demo", "kn": "ಸರಿ, ಗುರುವಾರ ಮುಂಜಾನೆ ಹನ್ನೊಂದಕ್ಕ ನಿಮ್ ಸೆಂಟರ್‌ನಾಗ. ಚೇತನ್ ಬಂದು ಡೆಮೋ ತೋರಿಸ್ತಾರ. ಧನ್ಯವಾದರೀ, ನಮಸ್ಕಾರ.", "en": "So, Thursday 11 am at your centre. Chetan will come and show the demo. Thank you, goodbye.", "why": "book_demo tool, repeat the next step once, end warmly"},
+    {"speaker": "customer", "kn": "ನಮಸ್ಕಾರ.", "en": "Goodbye."}
+  ]
+}

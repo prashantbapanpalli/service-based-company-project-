@@ -165,3 +165,22 @@ def test_simulations_export_is_valid_yaml_and_hides_unapproved_price():
     for s in data["scenarios"]:
         assert "Workflow Automation" in s["agent_expectations"]
         assert "OPENING LINE" in s["instructions"]
+
+
+# ---- demo call ----
+
+def test_demo_call_follows_the_rules():
+    import json
+    from pathlib import Path
+
+    from app.call_logic import build_greeting
+    from app.scenarios import _says_unapproved_price, voice_problems
+
+    demo = json.loads((Path(__file__).resolve().parent.parent / "data" / "demo_call.json").read_text(encoding="utf-8"))
+    kb = load_kb()
+    agent_lines = [t for t in demo["turns"] if t["speaker"] == "agent"]
+    assert agent_lines[0]["kn"] == build_greeting(kb, demo["customer"])
+    for t in agent_lines:
+        assert voice_problems(t["kn"]) == [], t["kn"]
+        assert not _says_unapproved_price(t["kn"], kb), t["kn"]
+    assert any(t.get("tool") == "book_demo" for t in agent_lines)

@@ -34,7 +34,7 @@ LiveKit Agents 1.8 (Python) · Sarvam AI (STT `STTRealtime`, TTS `bulbul:v3`) ·
 - Sales trainer: `python trainer.py`
 - Scenario tests vs the real LLM: `python tools/scenario_eval.py`
 - Talk to the agent with the mic: `python agent.py console`
-- Render demo audio: `python tools/render_demo.py`
+- Render demo audio: `python tools/render_demo.py` (Sarvam voices; `--engine espeak` offline)
 - Leads: `python manage.py import data/sample_leads.csv`, `python manage.py report`
 
 ## Rules — do not break these
