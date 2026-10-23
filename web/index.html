@@ -57,7 +57,7 @@
 <body>
 <header>
   <h1>Sales Trainer · SourceCode Studio</h1>
-  <p>Sales wisdom from Indian, American, Chinese and European books, mapped onto our calm, consultant-style Kannada call.</p>
+  <p>Sales wisdom from Indian, American, Chinese, European and Kannada books, mapped onto our calm, consultant-style Kannada call.</p>
 </header>
 <nav id="tabs" role="tablist"></nav>
 <main id="view"><p class="meta">Loading playbook…</p></main>
@@ -124,7 +124,7 @@ function renderBooks() {
     const q = document.getElementById("q").value.toLowerCase();
     const books = PB.books.filter(b => (region === "all" || b.region === region) && (!q || JSON.stringify(b).toLowerCase().includes(q)));
     document.getElementById("list").innerHTML = books.map(b =>
-      `<div class="card"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} · ${yearText(b.year)} · ${esc(regionName(b.region))}</div>
+      `<div class="card"><h3>${esc(b.title)}</h3><div class="meta">${esc(b.author)} · ${b.era ? esc(b.era) : yearText(b.year)} · ${esc(regionName(b.region))}</div>
        <p>${esc(b.core_idea)}</p><ul>` +
       b.principles.map(p => `<li><strong>${esc(p.rule)}</strong><span class="tag">${esc(PB.stages.find(s => s.id === p.stage).name)}</span><br>
         <span class="meta">On our call:</span> ${esc(p.on_our_call)}${example(p)}</li>`).join("") +

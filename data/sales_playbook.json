@@ -789,6 +789,126 @@
           "on_our_call": "End even a 'no' with one useful tip or a sincere thank-you."
         }
       ]
+    },
+    {
+      "id": "basavanna_vachana",
+      "region": "kannada",
+      "title": "Vachanas of Basavanna",
+      "author": "Basavanna",
+      "year": 1150,
+      "core_idea": "Speak with grace and truth: the famous vachana says speech should be like a string of pearls, the light of a ruby, a crystal rod. Words must match deeds.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Every word should be beautiful, clear and true, like a string of pearls (ನುಡಿದಡೆ ಮುತ್ತಿನ ಹಾರದಂತಿರಬೇಕು).",
+          "on_our_call": "Choose few, polite, clear words; never harsh, never exaggerated."
+        },
+        {
+          "stage": "value",
+          "rule": "Words must match deeds; say only what you will do.",
+          "on_our_call": "Promise only what the knowledge base supports; let the demo prove it."
+        }
+      ],
+      "era": "12th century"
+    },
+    {
+      "id": "kayaka",
+      "region": "kannada",
+      "title": "Kayakave Kailasa (Sharana teaching of work)",
+      "author": "Basavanna and the Sharanas",
+      "year": 1150,
+      "core_idea": "Honest work is worship; every trade is respectable.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "All honest work is dignified.",
+          "on_our_call": "Respect every centre owner's work, however small; a xerox shop owner is a valued client."
+        },
+        {
+          "stage": "discovery",
+          "rule": "Understand the person's daily work before advising.",
+          "on_our_call": "Ask how their day goes during the rush before suggesting anything."
+        }
+      ],
+      "era": "12th century"
+    },
+    {
+      "id": "sarvajna",
+      "region": "kannada",
+      "title": "Tripadis of Sarvajna",
+      "author": "Sarvajna",
+      "year": 1600,
+      "core_idea": "Short three-line verses in plain Kannada on everyday wisdom: say much in few words, in the language of ordinary people.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Say a lot in very few, plain words.",
+          "on_our_call": "Short sentences in everyday Dharwad Kannada; no bookish words."
+        },
+        {
+          "stage": "value",
+          "rule": "Plain examples from daily life convince better than theory.",
+          "on_our_call": "Use examples from their counter: students, forms, the rush."
+        }
+      ],
+      "era": "15th–16th century"
+    },
+    {
+      "id": "kagga",
+      "region": "kannada",
+      "title": "Mankuthimmana Kagga",
+      "author": "D. V. Gundappa (DVG)",
+      "year": 1943,
+      "core_idea": "Face life's ups and downs with balance and good humour; do your duty and stay steady.",
+      "principles": [
+        {
+          "stage": "follow_up",
+          "rule": "Stay balanced in success and refusal.",
+          "on_our_call": "A 'no' or an angry caller doesn't change your tone; stay warm and steady."
+        },
+        {
+          "stage": "mindset",
+          "rule": "Do your duty well without clinging to the result.",
+          "on_our_call": "Give your best on each call; respect the customer's decision."
+        }
+      ]
+    },
+    {
+      "id": "kuvempu_vishwamanava",
+      "region": "kannada",
+      "title": "Vishwa Manava Sandesha",
+      "author": "Kuvempu",
+      "year": 1960,
+      "core_idea": "Every person is born a universal human; do not divide people by caste, religion or status.",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Treat every person as an equal human being.",
+          "on_our_call": "Same respect for every caller; never refer to caste, religion or politics."
+        }
+      ],
+      "era": "20th century"
+    },
+    {
+      "id": "gaadegalu",
+      "region": "kannada",
+      "title": "Kannada Gaadegalu (folk proverbs)",
+      "author": "Kannada oral tradition",
+      "year": 1900,
+      "core_idea": "Everyday proverbs carry practical wisdom, e.g. 'ಮಾತೇ ಮುತ್ತು, ಮಾತೇ ಮೃತ್ಯು' (words can be a pearl or death) and 'ಆಳಾಗಬಲ್ಲವನು ಅರಸಾಗಬಲ್ಲ' (one who can serve can lead).",
+      "principles": [
+        {
+          "stage": "mindset",
+          "rule": "Words can build or break trust (ಮಾತೇ ಮುತ್ತು, ಮಾತೇ ಮೃತ್ಯು).",
+          "on_our_call": "Think before each sentence; one wrong word can lose the customer's trust."
+        },
+        {
+          "stage": "mindset",
+          "rule": "One who can serve can lead (ಆಳಾಗಬಲ್ಲವನು ಅರಸಾಗಬಲ್ಲ).",
+          "on_our_call": "Act as a helper first, a seller second."
+        }
+      ],
+      "era": "traditional"
     }
   ],
   "objections": [
@@ -1161,6 +1281,10 @@
     {
       "id": "european",
       "name": "European"
+    },
+    {
+      "id": "kannada",
+      "name": "Kannada"
     }
   ],
   "field_techniques_about": "Techniques from popular sales-call prompt libraries and cold-calling guides (the kind of content shared on Pinterest), summarised in our own words.",
@@ -1272,5 +1396,6 @@
       "title": "SalesGPT conversation stages (GitHub, MIT)",
       "url": "https://github.com/filip-michalsky/SalesGPT"
     }
-  }
+  },
+  "kannada_sources_note": "No modern Kannada-language sales books could be verified; these are classical Kannada works and proverbs whose general teachings are widely known. Quoted lines should be checked against an anthology."
 }
