@@ -26,7 +26,8 @@ LiveKit Agents 1.8 (Python) · Sarvam AI (STT `STTRealtime`, TTS `bulbul:v3`) ·
 - `manage.py` — CLI for leads (import, leads, next, optout, handovers, calls, report, export, check-kb)
 - `tools/provider_test.py` — Kannada TTS/STT quality test
 - `tools/render_demo.py` — renders `data/demo_call.json` to a WAV with Sarvam voices
-- `tests/test_core.py` — pytest suite (no API keys needed)
+- `tests/` — pytest suite, no API keys needed: `test_core.py` (data and prompt), `test_calls.py` (calling rules, recorder, cost), `test_agent.py` (real SalesAgent in a LiveKit AgentSession with a scripted LLM)
+- `requirements.txt`, `.env.example` — dependencies and the keys to fill in
 
 ## Commands (Windows, venv active: `.venv\Scripts\activate`)
 - Tests: `python -m pytest tests -q`
@@ -40,10 +41,11 @@ LiveKit Agents 1.8 (Python) · Sarvam AI (STT `STTRealtime`, TTS `bulbul:v3`) ·
 - The agent must always disclose it is an AI (greeting + when asked).
 - Facts come ONLY from `data/knowledge_base.json`; prices are spoken only if `price_approved: true`.
 - Opt-outs are permanent: blocked from calls and re-imports.
-- Max 3 attempts per lead, never twice within 24 hours.
+- Max 3 attempts per lead, never twice within 24 hours. Enforced in `app/db.py` (and the schedule_callback tool refuses earlier times), not only in the prompt.
 - Never ask for Aadhaar, bank, card, OTP or passwords.
 - Kannada must be natural spoken Dharwad/Hubballi style, short sentences.
 - Playbook = sales *methods* only; never copy book text, never add tactics listed in `excluded_tactics`.
+- Leads with source `sample…` are never called. Outbound dialling needs `ALLOW_OUTBOUND=1` (only after DLT).
 - Never commit `.env`. Run the tests after every change.
 
 ## Roadmap

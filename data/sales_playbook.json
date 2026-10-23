@@ -848,13 +848,13 @@
       "id": "busy",
       "objection_en": "I'm busy right now.",
       "objection_kn": "ಈಗ ಬಿಜಿ ಅದೀನ್ರೀ.",
-      "approach": "Apologise briefly, offer a specific callback time, record it. Never keep talking.",
+      "approach": "Apologise briefly, offer a callback at least 24 hours away (tomorrow at this time or later), record it. Never keep talking.",
       "books": [
         "voss",
         "fanatical"
       ],
-      "response_en": "Sorry to disturb you. Would this evening or tomorrow morning be better for two minutes?",
-      "response_kn": "ತೊಂದರೆ ಕೊಟ್ಟಿದ್ದಕ್ಕ ಕ್ಷಮಿಸ್ರಿ. ಇವತ್ತು ಸಂಜಿ ಅಥವಾ ನಾಳೆ ಮುಂಜಾನೆ, ಯಾವಾಗ ಎರಡು ನಿಮಿಷ ಆಗ್ತದರೀ?"
+      "response_en": "Sorry to disturb you. Would tomorrow at this time or the day after suit you for two minutes?",
+      "response_kn": "ತೊಂದರೆ ಕೊಟ್ಟಿದ್ದಕ್ಕ ಕ್ಷಮಿಸ್ರಿ. ನಾಳೆ ಇದೇ ಟೈಮ್‌ಗೆ ಅಥವಾ ನಾಡಿದ್ದು, ಯಾವಾಗ ಎರಡು ನಿಮಿಷ ಆಗ್ತದರೀ?"
     },
     {
       "id": "send_whatsapp",

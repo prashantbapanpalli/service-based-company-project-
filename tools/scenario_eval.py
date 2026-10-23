@@ -17,12 +17,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from app.call_logic import build_greeting  # noqa: E402
 from app.knowledge import build_instructions, load_kb  # noqa: E402
 from app.scenarios import grade_reply, load_scenarios  # noqa: E402
 
 DEFAULT_MODEL = "gpt-4.1-mini"
-GREETING = ("ನಮಸ್ಕಾರ್ರೀ, ನಾನು ಧಾರವಾಡದ ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋದ AI ಅಸಿಸ್ಟೆಂಟ್. "
-            "ಈಗ ಎರಡು ನಿಮಿಷ ಮಾತಾಡಾಕ ತೊಂದರೆ ಆಗ್ತದೇನ್ರೀ?")
 
 
 def tool_specs(actions):
@@ -77,7 +76,7 @@ def main(argv):
             model=model,
             messages=[
                 {"role": "system", "content": instructions},
-                {"role": "assistant", "content": GREETING},
+                {"role": "assistant", "content": build_greeting(kb)},
                 {"role": "user", "content": s["test"]["customer_says"]},
             ],
             tools=tools,

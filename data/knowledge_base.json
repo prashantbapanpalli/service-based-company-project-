@@ -1,8 +1,10 @@
 {
   "business": {
     "name": "SourceCode Studio",
+    "name_kn": "ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋ",
     "owner": "Chetan",
     "city": "Dharwad",
+    "city_kn": "ಧಾರವಾಡ",
     "serves": [
       "computer centres",
       "cyber cafés",
@@ -81,5 +83,12 @@
     "online",
     "WhatsApp",
     "AI"
-  ]
+  ],
+  "call_rules": {
+    "max_attempts": 3,
+    "min_hours_between_calls": 24,
+    "max_call_seconds": 300,
+    "silence_timeout_seconds": 8,
+    "timezone_offset": "+05:30"
+  }
 }

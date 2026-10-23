@@ -1,0 +1,6 @@
+phone,name,business,business_type,city,source
+98450 00001,Ravi,Ravi Computers,computer centre,Dharwad,sample (fake number)
+98450 00002,Suma,Suma Cyber Café,cyber café,Hubballi,sample (fake number)
+98450 00003,Imran,Imran Online Services,computer centre,Dharwad,sample (fake number)
+0836-2440000,,Vidya Xerox & Online,small business,Dharwad,sample (fake number)
+12345,,Broken Number,,,sample (invalid)

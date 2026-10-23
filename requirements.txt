@@ -1,0 +1,5 @@
+livekit-agents[openai,sarvam,silero]==1.8.8
+# tests
+pytest
+pytest-asyncio
+pyyaml
