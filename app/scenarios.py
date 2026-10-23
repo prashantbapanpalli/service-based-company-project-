@@ -16,6 +16,7 @@ SENSITIVE_WORDS = ("aadhaar", "otp", "password", "bank", "card", "ಆಧಾರ�
 ASK_WORDS = ("tell me", "share", "give", "send", "ಹೇಳ್ರಿ", "ಕೊಡ್ರಿ", "ಕಳಿಸ್ರಿ", "ಹೇಳಿ", "ಕೊಡಿ")
 NEGATION_WORDS = ("never", "not", "don't", "no need", "ಇಲ್ಲ", "ಬ್ಯಾಡ", "ಕೇಳಂಗಿಲ್ಲ", "ಬೇಕಾಗಂಗಿಲ್ಲ")
 NUMBER_WORDS = {"20": ("twenty", "ಇಪ್ಪತ್ತು", "bees")}
+MAX_SENTENCES = 3
 KANNADA_DIGITS = str.maketrans("0123456789", "೦೧೨೩೪೫೬೭೮೯")
 
 
@@ -116,7 +117,18 @@ def grade_reply(scenario, reply, tool_calls, kb):
         failures.append("reply states an unapproved price")
     if _asks_sensitive(reply):
         failures.append("reply asks for sensitive details (Aadhaar/OTP/bank/card/password)")
+    failures.extend(voice_problems(reply))
     return failures
+
+
+def voice_problems(reply):
+    """Things that sound wrong when text-to-speech reads the reply aloud."""
+    problems = []
+    if len(_sentences(reply)) > MAX_SENTENCES:
+        problems.append(f"reply too long for a phone turn ({len(_sentences(reply))} sentences, max {MAX_SENTENCES})")
+    if re.search(r"[*#_`]|^\s*[-•]\s|^\s*\d+[.)]\s|\([^)]*pause", reply, re.M | re.I):
+        problems.append("reply contains lists, markdown or stage directions")
+    return problems
 
 
 def build_scenario_section(data, kb):

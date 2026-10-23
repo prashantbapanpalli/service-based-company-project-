@@ -112,5 +112,23 @@ def test_recommended_replies_pass_their_own_tests():
     kb = load_kb()
     for s in load_scenarios()["scenarios"]:
         if s.get("test"):
-            reply = f"{s['say_kn']} {s['say_en']}"
-            assert grade_reply(s, reply, {s["action"]}, kb) == [], s["id"]
+            for reply in (s["say_kn"], s["say_en"]):
+                assert grade_reply(s, reply, {s["action"]}, kb) == [], (s["id"], reply)
+
+
+def test_voice_rules_in_instructions_and_grader():
+    from app.scenarios import voice_problems
+    text = build_instructions()
+    assert text.index("HARD RULES") < text.index("PRODUCTS")
+    assert "VOICE RULES" in text
+    assert voice_problems("ಆಗ್ಲಿರೀ. ನಾಳೆ ಕಾಲ್ ಮಾಡ್ತೀನಿ.") == []
+    assert voice_problems("Here are the options:\n- demo\n- callback")
+    assert voice_problems("**Great!** Let's talk.")
+    assert voice_problems("One. Two. Three. Four. Five.")
+
+
+def test_field_techniques_reach_the_agent():
+    playbook = load_playbook()
+    text = build_instructions(playbook=playbook)
+    for t in playbook["field_techniques"]:
+        assert t["on_our_call"] in text

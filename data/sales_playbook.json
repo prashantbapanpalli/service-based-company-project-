@@ -928,6 +928,43 @@
       ],
       "response_en": "That's a fair worry. First see the free demo; decide only after that. I won't ask for any payment details on this call.",
       "response_kn": "ನಿಮ್ ಚಿಂತಿ ಸರಿನರೀ. ಮೊದಲು ಫ್ರೀ ಡೆಮೋ ನೋಡ್ರಿ, ಆಮ್ಯಾಲ ನೀವ ನಿರ್ಧಾರ ಮಾಡ್ರಿ. ಈ ಕಾಲ್‌ನಾಗ ದುಡ್ಡಿನ ಡೀಟೇಲ್ಸ್ ಏನೂ ಕೇಳಂಗಿಲ್ಲ."
+    },
+    {
+      "id": "never_heard",
+      "objection_en": "Who are you? I've never heard of you.",
+      "objection_kn": "ಯಾರ್ರೀ ನೀವು? ನಿಮ್ ಹೆಸರೇ ಕೇಳಿಲ್ಲ.",
+      "approach": "A fair question. Say who you are and why you called them in one line (credibility first), then offer to stop.",
+      "books": [
+        "rhetoric",
+        "fanatical"
+      ],
+      "response_en": "Fair question. I'm the AI assistant of SourceCode Studio in Dharwad. We help computer centres finish form work faster. Shall I tell you more in thirty seconds?",
+      "response_kn": "ಸರಿ ಪ್ರಶ್ನೆರೀ. ನಾನು ಧಾರವಾಡದ ಸೋರ್ಸ್‌ಕೋಡ್ ಸ್ಟುಡಿಯೋದ AI ಅಸಿಸ್ಟೆಂಟ್. ಸೆಂಟರ್‌ಗಳ ಫಾರ್ಮ್ ಕೆಲಸ ಫಾಸ್ಟ್ ಮಾಡಾಕ ಸಹಾಯ ಮಾಡ್ತೀವಿ. ಮೂವತ್ತು ಸೆಕೆಂಡ್ ಹೇಳ್ಲೇನು?"
+    },
+    {
+      "id": "get_back_later",
+      "objection_en": "Let me think / talk to management, I'll get back to you.",
+      "objection_kn": "ವಿಚಾರ ಮಾಡಿ ಹೇಳ್ತೀನಿ.",
+      "approach": "Polite interest is not a commitment. Agree warmly and fix a specific callback day instead of waiting.",
+      "books": [
+        "mom_test",
+        "ziglar"
+      ],
+      "response_en": "Sure, take your time. Which day next week shall I call?",
+      "response_kn": "ಆಗ್ಲಿರೀ, ವಿಚಾರ ಮಾಡ್ರಿ. ಮುಂದಿನ ವಾರ ಯಾವ ದಿನ ಕಾಲ್ ಮಾಡ್ಲಿ?"
+    },
+    {
+      "id": "no_budget",
+      "objection_en": "We don't have budget for this now.",
+      "objection_kn": "ಈಗ ಇದಕ್ಕ ಬಜೆಟ್ ಇಲ್ಲರೀ.",
+      "approach": "Label it, don't push. The demo is free and without commitment; offer to show it before their next busy season.",
+      "books": [
+        "voss",
+        "bottom_pyramid",
+        "gap"
+      ],
+      "response_en": "I understand. The demo is free, with no commitment. Would it help to see it before the next season?",
+      "response_kn": "ಅರ್ಥ ಆಗ್ತದರೀ. ಡೆಮೋ ಫ್ರೀ ಅದ, ಯಾವ ಕಮಿಟ್‌ಮೆಂಟೂ ಇಲ್ಲ. ಮುಂದಿನ ಸೀಸನ್ ಮುಂಚೆ ನೋಡಿದ್ರ ಛಲೋ ಆಗ್ತದೇನು?"
     }
   ],
   "excluded_tactics": [
@@ -1092,6 +1129,20 @@
         "it_happened_in_india",
         "mom_test"
       ]
+    },
+    {
+      "scenario": "The customer says 'Let me think, I'll get back to you.' What is best?",
+      "options": [
+        "Wait for them to call back.",
+        "Agree warmly and ask which day next week you may call.",
+        "Say the offer ends today."
+      ],
+      "answer": 1,
+      "explain": "Polite interest isn't a commitment (The Mom Test); fix a specific next step (Ziglar). Fake deadlines are excluded.",
+      "books": [
+        "mom_test",
+        "ziglar"
+      ]
     }
   ],
   "regions": [
@@ -1111,5 +1162,101 @@
       "id": "european",
       "name": "European"
     }
-  ]
+  ],
+  "field_techniques_about": "Techniques from popular sales-call prompt libraries and cold-calling guides (the kind of content shared on Pinterest), summarised in our own words.",
+  "field_techniques": [
+    {
+      "id": "permission_opener",
+      "stage": "opening",
+      "rule": "Admit the call interrupts their day and give them a choice: 30 seconds now, or a better time.",
+      "on_our_call": "After the AI disclosure, offer 30 seconds now or a callback at a better time.",
+      "example_en": "I know I'm calling in the middle of your work. Shall I take thirty seconds to say why, or is another time better?",
+      "example_kn": "ನಿಮ್ ಕೆಲಸದ ನಡುವ ಕಾಲ್ ಮಾಡೀನಿ ಅಂತ ಗೊತ್ತದರೀ. ಮೂವತ್ತು ಸೆಕೆಂಡ್‌ನಾಗ ಯಾಕ ಕಾಲ್ ಮಾಡಿದೆ ಅಂತ ಹೇಳ್ಲೇನು, ಅಥವಾ ಬ್ಯಾರೆ ಟೈಮ್ ಛಲೋನಾ?",
+      "sources": [
+        "hyperbound",
+        "regie"
+      ]
+    },
+    {
+      "id": "specific_after_honest",
+      "stage": "opening",
+      "rule": "An honest opener only works if the very next line is specific to them, never a generic pitch.",
+      "on_our_call": "Right after permission, give one reason tied to their business type, e.g. scholarship-season form rush for a computer centre.",
+      "sources": [
+        "regie"
+      ]
+    },
+    {
+      "id": "objection_is_a_clue",
+      "stage": "objection",
+      "rule": "The first objection is often not the real one; ask one clarifying question before answering.",
+      "on_our_call": "Before answering an objection, ask what is behind it, e.g. 'Is it the cost, or the timing?'",
+      "example_kn": "ರೇಟಿನ ಚಿಂತಿನಾ, ಅಥವಾ ಈಗ ಟೈಮ್ ಸರಿ ಇಲ್ಲಾ?",
+      "sources": [
+        "cognism",
+        "kaspr"
+      ]
+    },
+    {
+      "id": "script_is_a_guide",
+      "stage": "mindset",
+      "rule": "A script is a guide, not something to recite; adapt to how the conversation flows.",
+      "on_our_call": "Use the example lines as ideas, not word for word; follow what the customer just said.",
+      "sources": [
+        "aomni"
+      ]
+    },
+    {
+      "id": "right_list_first",
+      "stage": "mindset",
+      "rule": "Calling the right people matters more than perfect words.",
+      "on_our_call": "Lead lists should be businesses that really fill forms or need a website; skip leads that clearly don't fit.",
+      "sources": [
+        "bullock"
+      ]
+    },
+    {
+      "id": "trust_takes_time",
+      "stage": "follow_up",
+      "rule": "Trust often needs more than one conversation.",
+      "on_our_call": "A warm 'not now' can become a yes later, but stay within 3 attempts per lead and never twice in 24 hours.",
+      "sources": [
+        "smartreach"
+      ]
+    }
+  ],
+  "web_sources": {
+    "hyperbound": {
+      "title": "Permission openers explained (Hyperbound)",
+      "url": "https://www.hyperbound.ai/blog/permission-openers-sales-calls"
+    },
+    "regie": {
+      "title": "Cold call openers (Regie.ai)",
+      "url": "https://regie.ai/blog/cold-call-openers"
+    },
+    "cognism": {
+      "title": "Cold calling objection handling playbook (Cognism)",
+      "url": "https://www.cognism.com/blog/cold-calling-objection-handling-playbook"
+    },
+    "kaspr": {
+      "title": "Cold calling objection handling (Kaspr)",
+      "url": "https://kaspr.io/blog/cold-calling-objection-handling"
+    },
+    "aomni": {
+      "title": "Cold calling scripts for objection handling (Aomni)",
+      "url": "https://www.aomni.com/blog/cold-calling-scripts-for-objection-handling"
+    },
+    "smartreach": {
+      "title": "Cold calling objections (SmartReach)",
+      "url": "https://smartreach.io/blog/cold-calling-objections-handling-on-sales-calls/"
+    },
+    "bullock": {
+      "title": "ChatGPT prompts for sales call scripts (Lilach Bullock)",
+      "url": "https://www.lilachbullock.com/chatgpt-prompts-sales-call-scripts/"
+    },
+    "docket": {
+      "title": "ChatGPT prompts for cold calling scripts (Docket)",
+      "url": "https://www.docket.io/chat-gpt-prompts-for-sales/cold-calling-script"
+    }
+  }
 }

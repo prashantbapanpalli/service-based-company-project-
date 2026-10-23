@@ -36,6 +36,7 @@
   ul { margin: 8px 0 0; padding-left: 18px; }
   li { margin: 6px 0; }
   .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); margin-left: 4px; max-width: 100%; }
+  .tag.web { background: transparent; border: 1px solid var(--accent); text-decoration: none; }
   .example { margin-top: 4px; padding: 6px 10px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
   .chip { border: 1px solid var(--line); background: var(--surface); color: var(--text); padding: 5px 12px; border-radius: 999px; font: inherit; font-size: 14px; cursor: pointer; }
@@ -98,6 +99,9 @@ function renderFlow() {
     const items = PB.books.flatMap(b => b.principles.filter(p => p.stage === s.id).map(p => ({...p, book: b})));
     return `<div class="card"><h3>${i + 1}. ${esc(s.name)}</h3><p class="goal">${esc(s.goal)}</p><ul>` +
       items.map(p => `<li>${esc(p.on_our_call)} <span class="tag">${esc(p.book.title)}</span>${example(p)}</li>`).join("") +
+      (PB.field_techniques || []).filter(t => t.stage === s.id).map(t => `<li>${esc(t.on_our_call)} ` +
+        t.sources.map(id => `<a class="tag web" href="${esc(PB.web_sources[id].url)}" target="_blank" rel="noopener">${esc(PB.web_sources[id].title)}</a>`).join("") +
+        `${example(t)}</li>`).join("") +
       `</ul></div>`;
   }).join("") +
   `<div class="card excluded"><h3>Tactics we never use</h3><ul>` +
